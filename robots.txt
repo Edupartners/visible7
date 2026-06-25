@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://visible7.cz/sitemap.xml
