@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VISIBLE7 MICEK® - Discovering Ideas. Mastering Execution.</title>
+    <title>VISIBLE7 MICEK® – metodika: 7 bran od nápadu po expanzi</title>
     <meta name="description" content="VISIBLE7 MICEK® – 7krokový framework pro nastartování online byznysu od nápadu po expanzi. Metodika podnikatelského minimalismu od Michala Míčka.">
     <meta name="robots" content="index, follow">
     
@@ -42,7 +42,7 @@
           "name": "VISIBLE7 MICEK®",
           "description": "7krokový framework pro nastartování online byznysu od nápadu po expanzi, postavený na principech podnikatelského minimalismu.",
           "inLanguage": "cs",
-          "dateModified": "2026-06-25",
+          "dateModified": "2026-11-01",
           "publisher": { "@id": "https://visible7.cz/#organization" }
         },
         {
@@ -76,7 +76,7 @@
         {
           "@type": "Course",
           "name": "VISIBLE7 MICEK® metodika",
-          "description": "7krokový framework (Vision, Ideation, Strategy, Build, Test, Launch, Expand) pro nastartování a růst online byznysu, založený na principu podnikatelského minimalismu.",
+          "description": "7krokový framework (Vize, Ideace, Strategie a čísla, Implementace, Budování poptávky, Launch, Expanze) pro nastartování a růst online byznysu, založený na principu podnikatelského minimalismu.",
           "provider": { "@id": "https://visible7.cz/#organization" },
           "url": "https://visible7.cz/"
         }
@@ -89,33 +89,47 @@
     <!-- Google Fonts Imports -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style type="text/tailwindcss">
         @theme {
-            --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-            --font-display: "Space Grotesk", sans-serif;
-            --font-mono: "JetBrains Mono", monospace;
+            --font-sans: "Rethink Sans", ui-sans-serif, system-ui, sans-serif;
+            --font-display: "Rethink Sans", ui-sans-serif, system-ui, sans-serif;
+            --: "Rethink Sans", ui-sans-serif, system-ui, sans-serif;
         }
         
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F9F8F6;
-            color: #1A1A1A;
+            font-family: 'Rethink Sans', ui-sans-serif, system-ui, sans-serif;
+            background-color: #F4F3F0;
+            color: #093428;
             -webkit-font-smoothing: antialiased;
         }
         
         .font-display {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Rethink Sans', ui-sans-serif, system-ui, sans-serif;
         }
         
-        .font-mono {
-            font-family: 'JetBrains Mono', monospace;
+        . {
+            font-family: 'Rethink Sans', ui-sans-serif, system-ui, sans-serif;
         }
 
-        .text-stroke-minimal {
-            -webkit-text-stroke: 1.5px #1A1A1A;
+        /* Podpis značky VISIBLE7 (shodně s visible7.io): lichoběžníkové tlačítko */
+        .v7-trap-btn {
+            position: relative;
+            isolation: isolate;
+            padding-right: 2.75rem !important;
         }
+        .v7-trap-btn::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: var(--trap-bg, #C6F05C);
+            clip-path: polygon(0 0, 100% 0, calc(100% - 16px) 100%, 0 100%);
+            transition: filter .15s ease;
+        }
+        .v7-trap-btn:hover::before { filter: brightness(0.94); }
+        .v7-trap { clip-path: polygon(0 0, 100% 0, calc(100% - 28px) 100%, 0 100%); }
 
         section[id], span[id] {
             scroll-margin-top: 80px;
@@ -129,10 +143,10 @@
             background: transparent;
         }
         .scrollbar-minimal::-webkit-scrollbar-thumb {
-            background: rgba(26, 26, 26, 0.15);
+            background: rgba(9, 52, 40, 0.15);
         }
         .scrollbar-minimal::-webkit-scrollbar-thumb:hover {
-            background: rgba(26, 26, 26, 0.3);
+            background: rgba(9, 52, 40, 0.3);
         }
 
         body #v7-sidebar { 
@@ -142,19 +156,18 @@
             height: 100vh !important; 
             width: 450px !important; 
             max-width: 85% !important;
-            background: rgba(26, 26, 26, 0.98) !important; 
+            background: rgba(15, 62, 46, 0.98) !important; 
             backdrop-filter: blur(20px) !important; 
             -webkit-backdrop-filter: blur(20px) !important;
             z-index: 9999999 !important; 
             transform: translateX(105%); 
             transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; 
             padding: 60px 40px !important;
-            box-shadow: -20px 0 50px rgba(0,0,0,0.5) !important;
             color: white !important;
             overflow-y: auto;
         }
 
-        body #v7-sidebar.open { transform: translateX(0) !important; }
+        body #v7-sidebar.open { transform: translateX(0) !important; box-shadow: -20px 0 50px rgba(0,0,0,0.5) !important; }
 
         body #v7-backdrop {
             position: fixed !important;
@@ -194,217 +207,195 @@
         }
     </style>
 </head>
-<body class="bg-[#F9F8F6] selection:bg-stone-200 text-[#1A1A1A] leading-normal font-sans">
+<body class="bg-[#F4F3F0] selection:bg-[#DFEEE3] text-[#093428] leading-normal font-sans">
 
     <!-- Header / Nav -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#F9F8F6]/85 backdrop-blur-md border-b border-stone-200/50">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center font-display">
-            <div class="flex items-center gap-2">
-                <span class="font-display font-medium text-lg tracking-widest text-[#1A1A1A] uppercase">
-                    VISIBLE7 <span class="font-black text-[#1A1A1A]">MICEK®</span>
-                </span>
-            </div>
-            <nav class="hidden md:flex items-center gap-8">
-                <a href="#hero" class="text-xs font-bold uppercase tracking-widest text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors">Start</a>
-                <a href="#metodika" class="text-xs font-bold uppercase tracking-widest text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors">7 fází</a>
-                <a href="#pribeh" class="text-xs font-bold uppercase tracking-widest text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors">Příběh</a>
-                <a href="#zakladatel" class="text-xs font-bold uppercase tracking-widest text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors">Zakladatel</a>
-                <a href="#proc-metodika" class="text-xs font-bold uppercase tracking-widest text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors">Celostní přístup</a>
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-[#E1DFDB]/70">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8 h-16 flex justify-between items-center gap-3">
+            <a href="#hero" class="flex shrink-0 items-center gap-2.5" aria-label="VISIBLE7 MICEK® – úvod">
+                <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0F3E2E] text-sm font-bold text-white">V7</span>
+                <span class="font-bold tracking-tight text-[#093428]">VISIBLE7 <span class="hidden font-normal text-[#505E59] sm:inline">MICEK®</span></span>
+            </a>
+            <nav class="hidden lg:flex items-center gap-1" aria-label="Hlavní menu">
+                <a href="#hero" class="rounded-lg px-3 py-2 text-[15px] font-semibold text-[#505E59] hover:text-[#093428] transition-colors">Úvod</a>
+                <a href="#metodika" class="rounded-lg px-3 py-2 text-[15px] font-semibold text-[#505E59] hover:text-[#093428] transition-colors">7 bran</a>
+                <a href="#pribeh" class="rounded-lg px-3 py-2 text-[15px] font-semibold text-[#505E59] hover:text-[#093428] transition-colors">Příběh</a>
+                <a href="#zakladatel" class="rounded-lg px-3 py-2 text-[15px] font-semibold text-[#505E59] hover:text-[#093428] transition-colors">Zakladatel</a>
+                <a href="#proc-metodika" class="rounded-lg px-3 py-2 text-[15px] font-semibold text-[#505E59] hover:text-[#093428] transition-colors">Celostní přístup</a>
             </nav>
             <div>
-                <a href="https://visible7.io/?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=header" class="whitespace-nowrap text-xs font-bold uppercase tracking-widest bg-[#5B5FE8] text-white px-5 py-2.5 rounded-none hover:bg-[#1A1A1A] hover:text-white transition-colors">
-                    Otestuj nápad<span class="hidden sm:inline"> zdarma</span> →
+                <a href="https://visible7.io/?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=header" class="v7-trap-btn inline-flex h-10 items-center whitespace-nowrap pl-4 text-sm font-bold text-[#0F3E2E]">
+                    Otestovat nápad<span class="hidden sm:inline">&nbsp;zdarma</span>
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex flex-col justify-center items-center bg-[#F9F8F6] text-[#1A1A1A] px-6 relative overflow-hidden border-b border-gray-200/40">
-        <!-- Background Decorative Minimalist Grid -->
-        <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#1A1A1A 1px, transparent 1px); background-size: 40px 40px;"></div>
-        
-        {/* Subtle Accent Shapes */}
-        <div class="absolute -right-20 top-1/3 w-[400px] h-[400px] rounded-full border border-[#1A1A1A] opacity-[0.03] pointer-events-none"></div>
-        <div class="absolute -right-10 top-1/3 w-[300px] h-[300px] rounded-full border border-[#1A1A1A] opacity-[0.05] pointer-events-none"></div>
-        <div class="absolute -left-20 bottom-10 w-[250px] h-[250px] rounded-full border border-[#1A1A1A] opacity-[0.02] pointer-events-none"></div>
-
-        <div class="max-w-4xl w-full text-center z-10 flex flex-col items-center pt-20">
-            <div class="flex items-center gap-3 mb-6">
-                <span class="h-2.5 w-2.5 bg-[#5B5FE8] rounded-full animate-pulse"></span>
-                <span class="font-mono text-sm sm:text-base md:text-lg uppercase tracking-[0.32em] font-black text-[#5B5FE8]">
-                    VISIBLE7 MICEK®
-                </span>
-            </div>
-
-            <h1 class="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter leading-[0.95] text-[#1A1A1A] mb-8">
-                <span class="block text-[#1A1A1A]">
-                    7 krokový model pro online byznys.
-                </span>
-                <span class="block text-transparent text-stroke-minimal mt-1 sm:mt-2">
-                    Od nápadu –&gt; po expanzi
-                </span>
-            </h1>
-
-            <p class="text-base sm:text-lg md:text-xl text-[#4A4A4A] leading-relaxed max-w-2xl font-light mb-12">
-                Poskytujeme podnikavým lidem užitečné nástroje podložené praxí, které jim umožňují nacházet správné příležitosti, zjednodušit byznys a dotahovat nápady do konce. Bez chaosu. Podle principů podnikatelského minimalismu.
+    <section id="hero" class="bg-[#F4F3F0] text-[#093428] px-4 sm:px-8 pt-28 pb-16 md:pt-36 md:pb-24 border-b border-[#E1DFDB]">
+        <div class="max-w-3xl mx-auto flex flex-col items-center text-center">
+            <p class="inline-flex items-center gap-2 rounded-full border border-[#E1DFDB] bg-white px-4 py-1.5 text-sm font-semibold text-[#0F3E2E]">
+                <span class="h-2 w-2 rounded-full bg-[#34845A]" aria-hidden="true"></span>
+                Metodika VISIBLE7 MICEK®
             </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-8 w-full sm:w-auto">
-                <a href="#metodika" class="w-full sm:w-auto px-10 py-5 bg-[#5B5FE8] text-white hover:bg-[#1A1A1A] hover:text-white transition-colors font-bold text-xs uppercase tracking-widest rounded-none shadow-none text-center">
-                    Prozkoumat 7 fází metodiky
+            <h1 class="mt-6 text-[2.4rem] font-extrabold leading-[1.04] tracking-[-0.035em] min-[400px]:text-[2.8rem] sm:text-6xl lg:text-[4.5rem]">
+                <span class="block">7 bran pro online byznys.</span>
+                <span class="text-[#34845A]">Od nápadu po expanzi.</span>
+            </h1>
+            <p class="mt-6 max-w-2xl text-xl leading-relaxed text-[#505E59] sm:text-[1.375rem]">
+                Metodika vznikla z&nbsp;práce s&nbsp;více než 1&nbsp;000 lidmi v&nbsp;kurzech Edu&nbsp;Partners. Pomáhá najít správnou příležitost, zjednodušit byznys a&nbsp;dotáhnout nápad do konce. Podle principů podnikatelského minimalismu.
+            </p>
+            <div class="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:items-center">
+                <a href="#metodika" class="v7-trap-btn inline-flex h-14 items-center justify-center pl-7 text-base font-bold text-[#0F3E2E]">
+                    Prozkoumat 7 bran
                 </a>
-                <a href="#pribeh" class="w-full sm:w-auto text-[#1A1A1A] hover:opacity-80 font-bold text-xs uppercase tracking-widest transition-opacity text-center">
-                    Proč VISIBLE7 vznikla? ↓
+                <a href="https://visible7.io/?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=hero" class="inline-flex h-14 items-center justify-center gap-2 border-2 border-[#0F3E2E] px-6 text-base font-semibold text-[#0F3E2E] transition-colors hover:bg-[#0F3E2E] hover:text-white">
+                    Otestovat nápad zdarma ↗
                 </a>
             </div>
-        </div>
-
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#1A1A1A] opacity-40">
-            <span class="font-mono text-[10px] uppercase tracking-[0.2em] font-bold">Scroll</span>
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            <a href="#pribeh" class="mt-4 text-sm text-[#505E59] underline decoration-[#E1DFDB] underline-offset-4 hover:text-[#093428]">Proč metodika vznikla?</a>
         </div>
     </section>
 
-    <section id="metodika" class="py-24 bg-white text-[#1A1A1A] px-6 md:px-12 border-b border-gray-200/40 relative">
+    <section id="metodika" class="py-24 bg-white text-[#093428] px-6 md:px-12 border-b border-[#E1DFDB] relative">
         <div class="max-w-6xl mx-auto">
             
             <div class="flex justify-center mb-4">
-                <span class="font-mono text-[11px] uppercase tracking-[0.25em] bg-stone-100 text-[#1A1A1A] px-4 py-1.5 rounded-none font-bold border border-stone-200/50">
-                    Přehled metodiky (V7 Framework)
+                <span class="inline-flex rounded-full border border-[#E1DFDB] bg-white px-4 py-1.5 text-sm font-semibold text-[#0F3E2E]">
+                    Přehled metodiky
                 </span>
             </div>
 
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="font-display font-medium text-3xl sm:text-4xl tracking-tight text-[#1A1A1A] mb-4">
-                    VISIBLE<span class="text-[#5B5FE8] font-black">7</span> Framework Map
+                <h2 class="font-display font-medium text-3xl sm:text-4xl tracking-tight text-[#093428] mb-4">
+                    VISIBLE<span class="text-[#0F3E2E] font-black">7</span> Framework Map
                 </h2>
-                <p class="text-[#4A4A4A] text-base font-light">
-                    <strong>Executive Ecommerce Framework MICEK™</strong> je vizuální matice, která dává řád a strukturu každému kroku na cestě k dotažení nápadů. Klikněte na jakoukoliv buňku a odhalte schovaný checklist.
+                <p class="text-[#505E59] text-base">
+                    <strong>Executive Ecommerce Framework MICEK®</strong> je mapa, která dává řád každému kroku na cestě k&nbsp;dotažení nápadu. Klikněte na kteroukoli buňku a&nbsp;uvidíte její checklist.
                 </p>
             </div>
 
             <div class="w-full overflow-x-auto pb-4 scrollbar-minimal">
-                <div class="min-w-[980px] p-4 sm:p-5 bg-[#F9F8F6] border border-stone-200">
+                <div class="min-w-[980px] p-4 sm:p-5 bg-[#F4F3F0] border border-[#E1DFDB]">
                     
-                    <header class="text-center mb-8 bg-white border border-stone-200 p-6 flex flex-col items-center justify-center">
-                        <h3 class="font-display font-black text-2xl tracking-widest text-[#1A1A1A]">
-                            VISIBLE<span class="text-[#5B5FE8]">7</span>
+                    <header class="text-center mb-8 bg-white border border-[#E1DFDB] p-6 flex flex-col items-center justify-center">
+                        <h3 class="font-display font-black text-2xl tracking-widest text-[#093428]">
+                            VISIBLE<span class="text-[#0F3E2E]">7</span>
                         </h3>
-                        <p class="font-mono text-[10px] tracking-widest text-gray-500 uppercase font-bold mt-1">
-                            Executive Ecommerce Framework MICEK™
+                        <p class="font-mono text-[10px] tracking-widest text-[#505E59] uppercase font-bold mt-1">
+                            Executive Ecommerce Framework MICEK®
                         </p>
                     </header>
 
                     <div class="grid grid-cols-7 gap-2.5 font-display text-xs">
                         
-                        <div class="bg-white text-[#5B5FE8] border border-stone-200 h-16 font-black text-3xl flex items-center justify-center">V</div>
-                        <div class="bg-white text-[#5B5FE8] border border-stone-200 h-16 font-black text-3xl flex items-center justify-center">I</div>
-                        <div class="bg-white text-[#5B5FE8] border border-stone-200 h-16 font-black text-3xl flex items-center justify-center">S</div>
-                        <div class="bg-white text-[#5B5FE8] border border-stone-200 h-16 font-black text-3xl flex items-center justify-center">I</div>
-                        <div class="bg-white text-[#5B5FE8] border border-stone-200 h-16 font-black text-3xl flex items-center justify-center">B</div>
-                        <div class="bg-white text-[#5B5FE8] border border-stone-200 h-16 font-black text-3xl flex items-center justify-center">L</div>
-                        <div class="bg-white text-[#5B5FE8] border border-stone-200 h-16 font-black text-3xl flex items-center justify-center">E</div>
+                        <div class="bg-white text-[#0F3E2E] border border-[#E1DFDB] h-16 font-black text-3xl flex items-center justify-center">V</div>
+                        <div class="bg-white text-[#0F3E2E] border border-[#E1DFDB] h-16 font-black text-3xl flex items-center justify-center">I</div>
+                        <div class="bg-white text-[#0F3E2E] border border-[#E1DFDB] h-16 font-black text-3xl flex items-center justify-center">S</div>
+                        <div class="bg-white text-[#0F3E2E] border border-[#E1DFDB] h-16 font-black text-3xl flex items-center justify-center">I</div>
+                        <div class="bg-white text-[#0F3E2E] border border-[#E1DFDB] h-16 font-black text-3xl flex items-center justify-center">B</div>
+                        <div class="bg-white text-[#0F3E2E] border border-[#E1DFDB] h-16 font-black text-3xl flex items-center justify-center">L</div>
+                        <div class="bg-white text-[#0F3E2E] border border-[#E1DFDB] h-16 font-black text-3xl flex items-center justify-center">E</div>
 
-                        <button onclick="openV7Side('Vision')" class="h-16 bg-[#1A1A1A] hover:bg-black text-white hover:text-[#5B5FE8] border border-[#1A1A1A] font-bold tracking-widest uppercase transition-colors text-center flex flex-col justify-center items-center cursor-pointer">
-                            <span>VISION</span>
+                        <button onclick="openV7Side('Vision')" class="h-16 px-1 leading-tight bg-[#0F3E2E] hover:bg-[#0A291F] text-white hover:text-[#C6F05C] border border-[#0F3E2E] font-bold tracking-widest uppercase transition-colors text-center flex flex-col justify-center items-center cursor-pointer">
+                            <span>Vize</span>
                         </button>
-                        <button onclick="openV7Side('Ideation')" class="h-16 bg-[#1A1A1A] hover:bg-black text-white hover:text-[#5B5FE8] border border-[#1A1A1A] font-bold tracking-widest uppercase transition-colors text-center flex flex-col justify-center items-center cursor-pointer">
-                            <span>IDEATION</span>
+                        <button onclick="openV7Side('Ideation')" class="h-16 px-1 leading-tight bg-[#0F3E2E] hover:bg-[#0A291F] text-white hover:text-[#C6F05C] border border-[#0F3E2E] font-bold tracking-widest uppercase transition-colors text-center flex flex-col justify-center items-center cursor-pointer">
+                            <span>Ideace</span>
                         </button>
-                        <button onclick="openV7Side('Strategy')" class="h-16 bg-[#1A1A1A] hover:bg-black text-white hover:text-[#5B5FE8] border border-[#1A1A1A] font-bold tracking-widest uppercase transition-colors text-center flex flex-col justify-center items-center cursor-pointer">
-                            <span>STRATEGY</span>
+                        <button onclick="openV7Side('Strategy')" class="h-16 px-1 leading-tight bg-[#0F3E2E] hover:bg-[#0A291F] text-white hover:text-[#C6F05C] border border-[#0F3E2E] font-bold tracking-widest uppercase transition-colors text-center flex flex-col justify-center items-center cursor-pointer">
+                            <span>Strategie a&nbsp;čísla</span>
                         </button>
-                        <button onclick="openV7Side('Build')" class="h-16 bg-[#1A1A1A] hover:bg-black text-white hover:text-[#5B5FE8] border border-[#1A1A1A] font-bold tracking-widest uppercase transition-colors text-center flex flex-col justify-center items-center cursor-pointer">
-                            <span>BUILD</span>
+                        <button onclick="openV7Side('Build')" class="h-16 px-1 leading-tight bg-[#0F3E2E] hover:bg-[#0A291F] text-white hover:text-[#C6F05C] border border-[#0F3E2E] font-bold tracking-widest uppercase transition-colors text-center flex flex-col justify-center items-center cursor-pointer">
+                            <span>Implementace</span>
                         </button>
-                        <button onclick="openV7Side('Test')" class="h-16 bg-[#1A1A1A] hover:bg-black text-white hover:text-[#5B5FE8] border border-[#1A1A1A] font-bold tracking-widest uppercase transition-colors text-center flex flex-col justify-center items-center cursor-pointer">
-                            <span>TEST</span>
+                        <button onclick="openV7Side('Test')" class="h-16 px-1 leading-tight bg-[#0F3E2E] hover:bg-[#0A291F] text-white hover:text-[#C6F05C] border border-[#0F3E2E] font-bold tracking-widest uppercase transition-colors text-center flex flex-col justify-center items-center cursor-pointer">
+                            <span>Budování poptávky</span>
                         </button>
-                        <button onclick="openV7Side('Launch')" class="h-16 bg-[#1A1A1A] hover:bg-black text-white hover:text-[#5B5FE8] border border-[#1A1A1A] font-bold tracking-widest uppercase transition-colors text-center flex flex-col justify-center items-center cursor-pointer">
-                            <span>LAUNCH</span>
+                        <button onclick="openV7Side('Launch')" class="h-16 px-1 leading-tight bg-[#0F3E2E] hover:bg-[#0A291F] text-white hover:text-[#C6F05C] border border-[#0F3E2E] font-bold tracking-widest uppercase transition-colors text-center flex flex-col justify-center items-center cursor-pointer">
+                            <span>Launch</span>
                         </button>
-                        <button onclick="openV7Side('Expand')" class="h-16 bg-[#1A1A1A] hover:bg-black text-white hover:text-[#5B5FE8] border border-[#1A1A1A] font-bold tracking-widest uppercase transition-colors text-center flex flex-col justify-center items-center cursor-pointer">
-                            <span>EXPAND</span>
+                        <button onclick="openV7Side('Expand')" class="h-16 px-1 leading-tight bg-[#0F3E2E] hover:bg-[#0A291F] text-white hover:text-[#C6F05C] border border-[#0F3E2E] font-bold tracking-widest uppercase transition-colors text-center flex flex-col justify-center items-center cursor-pointer">
+                            <span>Expanze</span>
                         </button>
 
-                        <button onclick="openV7Side('Think')" class="h-14 bg-stone-100 hover:bg-stone-200 border border-stone-200 text-[#1A1A1A] font-semibold text-[10px] tracking-wider uppercase transition-colors flex items-center justify-center cursor-pointer">
+                        <button onclick="openV7Side('Think')" class="h-14 bg-stone-100 hover:bg-stone-200 border border-[#E1DFDB] text-[#093428] font-semibold text-[10px] tracking-wider uppercase transition-colors flex items-center justify-center cursor-pointer">
                             THINK
                         </button>
-                        <button onclick="openV7Side('Creation')" class="col-span-3 h-14 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200/60 text-[#1A1A1A] font-bold text-[10px] tracking-widest uppercase transition-colors flex items-center justify-center cursor-pointer gap-1">
+                        <button onclick="openV7Side('Creation')" class="col-span-3 h-14 bg-[#EBF4EF] hover:bg-[#DFEEE3] border border-[#C2DFCB] text-[#093428] font-bold text-[10px] tracking-widest uppercase transition-colors flex items-center justify-center cursor-pointer gap-1">
                             CREATION PHASE
                         </button>
-                        <button onclick="openV7Side('PoC')" class="h-14 bg-stone-100 hover:bg-stone-200 border border-stone-200 text-[#1A1A1A] font-semibold text-[10px] tracking-wider uppercase transition-colors flex items-center justify-center cursor-pointer">
+                        <button onclick="openV7Side('PoC')" class="h-14 bg-stone-100 hover:bg-stone-200 border border-[#E1DFDB] text-[#093428] font-semibold text-[10px] tracking-wider uppercase transition-colors flex items-center justify-center cursor-pointer">
                             PoC
                         </button>
-                        <button onclick="openV7Side('MVP')" class="h-14 bg-stone-100 hover:bg-stone-200 border border-stone-200 text-[#1A1A1A] font-semibold text-[10px] tracking-wider uppercase transition-colors flex items-center justify-center cursor-pointer">
+                        <button onclick="openV7Side('MVP')" class="h-14 bg-stone-100 hover:bg-stone-200 border border-[#E1DFDB] text-[#093428] font-semibold text-[10px] tracking-wider uppercase transition-colors flex items-center justify-center cursor-pointer">
                             MVP
                         </button>
-                        <button onclick="openV7Side('Grow')" class="h-14 bg-stone-150 hover:bg-stone-200 border border-stone-200 text-[#1A1A1A] font-semibold text-[10px] tracking-wider uppercase transition-colors flex items-center justify-center cursor-pointer">
+                        <button onclick="openV7Side('Grow')" class="h-14 bg-stone-150 hover:bg-stone-200 border border-[#E1DFDB] text-[#093428] font-semibold text-[10px] tracking-wider uppercase transition-colors flex items-center justify-center cursor-pointer">
                             GROW
                         </button>
 
-                        <button onclick="openV7Side('FindMarket')" class="h-14 bg-stone-200/50 hover:bg-stone-200 text-[#1A1A1A] text-[9px] tracking-wider font-semibold transition-colors flex flex-col justify-center items-center p-1 uppercase text-center cursor-pointer border border-stone-200">
+                        <button onclick="openV7Side('FindMarket')" class="h-14 bg-stone-200/50 hover:bg-stone-200 text-[#093428] text-[9px] tracking-wider font-semibold transition-colors flex flex-col justify-center items-center p-1 uppercase text-center cursor-pointer border border-[#E1DFDB]">
                             <span>PRODUCT &</span><span>FIND MARKET</span>
                         </button>
-                        <button onclick="openV7Side('ScopeDef')" class="h-14 bg-stone-200/50 hover:bg-stone-200 text-[#1A1A1A] text-[9px] tracking-wider font-bold transition-colors flex flex-col justify-center items-center p-1 uppercase text-center cursor-pointer border border-stone-200">
+                        <button onclick="openV7Side('ScopeDef')" class="h-14 bg-stone-200/50 hover:bg-stone-200 text-[#093428] text-[9px] tracking-wider font-bold transition-colors flex flex-col justify-center items-center p-1 uppercase text-center cursor-pointer border border-[#E1DFDB]">
                             <span>SCOPE DEF.</span>
                         </button>
-                        <button onclick="openV7Side('Profitability')" class="h-14 bg-stone-200/50 hover:bg-stone-200 text-[#1A1A1A] text-[9px] tracking-wider font-semibold transition-colors flex flex-col justify-center items-center p-1 uppercase text-center cursor-pointer border border-stone-200">
+                        <button onclick="openV7Side('Profitability')" class="h-14 bg-stone-200/50 hover:bg-stone-200 text-[#093428] text-[9px] tracking-wider font-semibold transition-colors flex flex-col justify-center items-center p-1 uppercase text-center cursor-pointer border border-[#E1DFDB]">
                             <span>STRATEGY & PROFIT</span>
                         </button>
-                        <button onclick="openV7Side('CreateProduct')" class="h-14 bg-stone-200/50 hover:bg-stone-200 text-[#1A1A1A] text-[9px] tracking-wider font-semibold transition-colors flex flex-col justify-center items-center p-1 uppercase text-center cursor-pointer border border-stone-200">
+                        <button onclick="openV7Side('CreateProduct')" class="h-14 bg-stone-200/50 hover:bg-stone-200 text-[#093428] text-[9px] tracking-wider font-semibold transition-colors flex flex-col justify-center items-center p-1 uppercase text-center cursor-pointer border border-[#E1DFDB]">
                             <span>CREATE PROD.</span>
                         </button>
-                        <button onclick="openV7Side('TestingMarket')" class="h-14 bg-stone-200/50 hover:bg-stone-200 text-[#1A1A1A] text-[9px] tracking-wider font-semibold transition-colors flex flex-col justify-center items-center p-1 uppercase text-center cursor-pointer border border-stone-200">
+                        <button onclick="openV7Side('TestingMarket')" class="h-14 bg-stone-200/50 hover:bg-stone-200 text-[#093428] text-[9px] tracking-wider font-semibold transition-colors flex flex-col justify-center items-center p-1 uppercase text-center cursor-pointer border border-[#E1DFDB]">
                             <span>TESTING MARKET</span>
                         </button>
-                        <button onclick="openV7Side('ReadyToProd')" class="h-14 bg-stone-200/50 hover:bg-stone-200 text-[#1A1A1A] text-[9px] tracking-wider font-semibold transition-colors flex flex-col justify-center items-center p-1 uppercase text-center cursor-pointer border border-stone-200">
+                        <button onclick="openV7Side('ReadyToProd')" class="h-14 bg-stone-200/50 hover:bg-stone-200 text-[#093428] text-[9px] tracking-wider font-semibold transition-colors flex flex-col justify-center items-center p-1 uppercase text-center cursor-pointer border border-[#E1DFDB]">
                             <span>READY TO PROD.</span>
                         </button>
-                        <button onclick="openV7Side('GrowAutomate')" class="h-14 bg-stone-200/50 hover:bg-stone-200 text-[#1A1A1A] text-[9px] tracking-wider font-semibold transition-colors flex flex-col justify-center items-center p-1 uppercase text-center cursor-pointer border border-stone-200">
+                        <button onclick="openV7Side('GrowAutomate')" class="h-14 bg-stone-200/50 hover:bg-stone-200 text-[#093428] text-[9px] tracking-wider font-semibold transition-colors flex flex-col justify-center items-center p-1 uppercase text-center cursor-pointer border border-[#E1DFDB]">
                             <span>GROW & AUTOMATE</span>
                         </button>
 
-                        <button onclick="openV7Side('Solo')" class="col-span-6 h-12 bg-stone-50 hover:bg-stone-100 border border-stone-200 text-stone-600 font-bold text-[10px] tracking-widest text-left px-5 uppercase flex items-center cursor-pointer">
+                        <button onclick="openV7Side('Solo')" class="col-span-6 h-12 bg-stone-50 hover:bg-stone-100 border border-[#E1DFDB] text-[#505E59] font-bold text-[10px] tracking-widest text-left px-5 uppercase flex items-center cursor-pointer">
                             ★ SOLO JOURNEY - HANDS AND LEGS (Maximal Focus)
                         </button>
-                        <button onclick="openV7Side('Team')" class="h-12 bg-stone-200 hover:bg-stone-250 text-[#1A1A1A] font-bold text-[10px] tracking-widest uppercase flex items-center justify-center cursor-pointer border border-stone-300">
+                        <button onclick="openV7Side('Team')" class="h-12 bg-stone-200 hover:bg-stone-250 text-[#093428] font-bold text-[10px] tracking-widest uppercase flex items-center justify-center cursor-pointer border border-[#E1DFDB]">
                             TEAM
                         </button>
 
-                        <button onclick="openV7Side('How')" class="col-span-6 h-12 bg-stone-50 hover:bg-stone-100 border border-stone-200 text-stone-600 font-bold text-[10px] tracking-widest text-left px-5 uppercase flex items-center cursor-pointer">
-                            ❓ HOW I CAN DO IT?
+                        <button onclick="openV7Side('How')" class="col-span-6 h-12 bg-stone-50 hover:bg-stone-100 border border-[#E1DFDB] text-[#505E59] font-bold text-[10px] tracking-widest text-left px-5 uppercase flex items-center cursor-pointer">
+                            ❓ HOW I&nbsp;CAN DO IT?
                         </button>
-                        <button onclick="openV7Side('Who')" class="h-12 bg-[#1A1A1A] hover:bg-black text-white hover:text-[#5B5FE8] font-bold text-[10px] tracking-widest uppercase flex items-center justify-center cursor-pointer">
+                        <button onclick="openV7Side('Who')" class="h-12 bg-[#0F3E2E] hover:bg-[#0A291F] text-white hover:text-[#C6F05C] font-bold text-[10px] tracking-widest uppercase flex items-center justify-center cursor-pointer">
                             WHO?
                         </button>
 
-                        <button onclick="openV7Side('BruceLee')" class="col-span-6 h-12 bg-stone-50 hover:bg-stone-100 border border-stone-200 text-stone-600 font-bold text-[10px] tracking-widest text-left px-5 uppercase flex items-center cursor-pointer">
+                        <button onclick="openV7Side('BruceLee')" class="col-span-6 h-12 bg-stone-50 hover:bg-stone-100 border border-[#E1DFDB] text-[#505E59] font-bold text-[10px] tracking-widest text-left px-5 uppercase flex items-center cursor-pointer">
                             🥋 ONE PRODUCT (LASER STRATEGY - BRUCE LEE)
                         </button>
-                        <button onclick="openV7Side('Features')" class="h-12 bg-stone-200 hover:bg-stone-250 text-[#1A1A1A] font-bold text-[10px] tracking-widest uppercase flex items-center justify-center cursor-pointer border border-stone-300">
+                        <button onclick="openV7Side('Features')" class="h-12 bg-stone-200 hover:bg-stone-250 text-[#093428] font-bold text-[10px] tracking-widest uppercase flex items-center justify-center cursor-pointer border border-[#E1DFDB]">
                             FEATURES
                         </button>
 
-                        <button onclick="openV7Side('Lose')" class="col-span-6 h-12 bg-stone-50 hover:bg-stone-100 border border-stone-200 text-stone-600 font-bold text-[10px] tracking-widest text-left px-5 uppercase flex items-center cursor-pointer">
-                            ⚖️ HOW MUCH CAN I LOSE?
+                        <button onclick="openV7Side('Lose')" class="col-span-6 h-12 bg-stone-50 hover:bg-stone-100 border border-[#E1DFDB] text-[#505E59] font-bold text-[10px] tracking-widest text-left px-5 uppercase flex items-center cursor-pointer">
+                            ⚖️ HOW MUCH CAN I&nbsp;LOSE?
                         </button>
-                        <button onclick="openV7Side('Gain')" class="h-12 bg-[#1A1A1A] hover:bg-black text-white hover:text-[#5B5FE8] font-bold text-[10px] tracking-widest uppercase flex items-center justify-center cursor-pointer">
+                        <button onclick="openV7Side('Gain')" class="h-12 bg-[#0F3E2E] hover:bg-[#0A291F] text-white hover:text-[#C6F05C] font-bold text-[10px] tracking-widest uppercase flex items-center justify-center cursor-pointer">
                             MORE GAIN
                         </button>
 
-                        <button onclick="openV7Side('Mindset')" class="col-span-7 h-12 bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 hover:opacity-95 text-white font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2 cursor-pointer border-none shadow-xs">
-                            ⚡ Transformation of Mindset - Poznej sám sebe
+                        <button onclick="openV7Side('Mindset')" class="col-span-7 h-12 bg-[#9A5229] hover:bg-[#86471F] text-white font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2 cursor-pointer border-none shadow-xs">
+                            Transformation of Mindset – poznej sám sebe
                         </button>
 
-                        <div class="bg-white border border-stone-200 p-2.5 flex items-center justify-center text-center font-mono text-[9px] uppercase font-bold text-stone-500">Blue Ocean</div>
-                        <div class="bg-white border border-stone-200 p-2.5 flex items-center justify-center text-center font-mono text-[9px] uppercase font-bold text-stone-500">Lean Canvas</div>
-                        <div class="bg-white border border-stone-200 p-2.5 flex items-center justify-center text-center font-mono text-[9px] uppercase font-bold text-stone-500">Excel Model</div>
-                        <div class="bg-white border border-stone-200 p-2.5 flex items-center justify-center text-center font-mono text-[9px] uppercase font-bold text-stone-500">Open Source</div>
-                        <div class="bg-white border border-stone-200 p-2.5 flex items-center justify-center text-center font-mono text-[9px] uppercase font-bold text-stone-500">SEO / PPC</div>
-                        <div class="bg-white border border-stone-200 p-2.5 flex items-center justify-center text-center font-mono text-[9px] uppercase font-bold text-stone-500">GA4 / Hotjar</div>
-                        <button onclick="openV7Side('Expansion')" class="bg-[#1A1A1A] hover:bg-black text-white text-[9px] p-2.5 font-bold uppercase tracking-wider text-center flex items-center justify-center cursor-pointer">
+                        <div class="bg-white border border-[#E1DFDB] p-2.5 flex items-center justify-center text-center font-mono text-[9px] uppercase font-bold text-[#505E59]">Blue Ocean</div>
+                        <div class="bg-white border border-[#E1DFDB] p-2.5 flex items-center justify-center text-center font-mono text-[9px] uppercase font-bold text-[#505E59]">Lean Canvas</div>
+                        <div class="bg-white border border-[#E1DFDB] p-2.5 flex items-center justify-center text-center font-mono text-[9px] uppercase font-bold text-[#505E59]">Excel Model</div>
+                        <div class="bg-white border border-[#E1DFDB] p-2.5 flex items-center justify-center text-center font-mono text-[9px] uppercase font-bold text-[#505E59]">Open Source</div>
+                        <div class="bg-white border border-[#E1DFDB] p-2.5 flex items-center justify-center text-center font-mono text-[9px] uppercase font-bold text-[#505E59]">SEO / PPC</div>
+                        <div class="bg-white border border-[#E1DFDB] p-2.5 flex items-center justify-center text-center font-mono text-[9px] uppercase font-bold text-[#505E59]">GA4 / Hotjar</div>
+                        <button onclick="openV7Side('Expansion')" class="bg-[#0F3E2E] hover:bg-[#0A291F] text-white text-[9px] p-2.5 font-bold uppercase tracking-wider text-center flex items-center justify-center cursor-pointer">
                             EXPANSION STATE
                         </button>
                     </div>
@@ -413,34 +404,34 @@
             </div>
 
             <!-- Plakát A3 ke stažení -->
-            <div class="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 border border-stone-200 bg-[#F9F8F6] p-6 sm:p-8">
+            <div class="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 border border-[#E1DFDB] bg-[#F4F3F0] p-6 sm:p-8 rounded-2xl">
                 <div>
-                    <span class="font-mono text-[10px] uppercase tracking-[0.2em] bg-[#5B5FE8] text-white px-3 py-1.5 font-bold">Zdarma · PDF A3</span>
-                    <h3 class="font-display font-bold text-xl text-[#1A1A1A] mt-4 mb-2">Stáhni si framework jako plakát na zeď</h3>
-                    <p class="text-[#4A4A4A] text-sm font-light leading-relaxed max-w-xl">
-                        Všech 7 fází V-I-S-I-B-L-E na jedné stránce: co v každé fázi děláš, s jakými nástroji a kdy přichází zlom ze sólo cesty k týmu. K tomu pracovní listy zdarma.
+                    <span class="text-sm bg-[#0F3E2E] text-white px-3 py-1.5 font-bold">Zdarma · PDF A3</span>
+                    <h3 class="font-display font-bold text-xl text-[#093428] mt-4 mb-2">Stáhni si framework jako plakát na zeď</h3>
+                    <p class="text-[#505E59] text-sm leading-relaxed max-w-xl">
+                        Všech 7 bran V-I-S-I-B-L-E na jedné stránce: co v&nbsp;každé fázi děláš, s&nbsp;jakými nástroji a&nbsp;kdy přichází zlom ze sólo cesty k&nbsp;týmu. K&nbsp;tomu pracovní listy zdarma.
                     </p>
                 </div>
-                <a href="https://visible7.io/pracovni-listy?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=plakat" target="_blank" rel="noopener" class="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#1A1A1A] text-white hover:bg-black transition-colors font-bold text-xs uppercase tracking-widest rounded-none text-center">
+                <a href="https://visible7.io/pracovni-listy?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=plakat" target="_blank" rel="noopener" class="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0F3E2E] text-white hover:bg-[#0A291F] transition-colors font-bold text-xs text-center">
                     Stáhnout plakát
-                    <span class="font-mono">↓</span>
+                    <span>↓</span>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Story Section -->
-    <section id="pribeh" class="py-24 bg-[#F9F8F6] text-[#1A1A1A] px-6 md:px-12 border-b border-gray-200/40">
+    <section id="pribeh" class="py-24 bg-[#F4F3F0] text-[#093428] px-6 md:px-12 border-b border-[#E1DFDB]">
         <div class="max-w-6xl mx-auto">
             <div class="flex justify-center mb-4">
-                <span class="font-mono text-[11px] uppercase tracking-[0.25em] bg-stone-100 text-[#1A1A1A] px-4 py-1.5 rounded-none font-bold border border-stone-200/50">Příběh & Motivace</span>
+                <span class="inline-flex rounded-full border border-[#E1DFDB] bg-white px-4 py-1.5 text-sm font-semibold text-[#0F3E2E]">Příběh a&nbsp;motivace</span>
             </div>
 
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="font-display font-medium text-3xl sm:text-4xl tracking-tight text-[#1A1A1A] mb-4">
+                <h2 class="font-display font-medium text-3xl sm:text-4xl tracking-tight text-[#093428] mb-4">
                     Proč metodika <span class="font-black">VISIBLE7</span> vznikla?
                 </h2>
-                <p class="text-[#4A4A4A] text-lg font-light">
+                <p class="text-[#505E59] text-lg">
                     Podnikání má přinášet svobodu, ne neúprosnou lopotu. Většina podnikavých lidí se však chytí do pasti vlastní komplexnosti.
                 </p>
             </div>
@@ -448,20 +439,20 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-start">
                 <!-- Chaos box -->
                 <div class="space-y-6">
-                    <h3 class="font-display font-bold text-sm uppercase tracking-widest text-[#1A1A1A] flex items-center gap-2">
-                        <span>⚠️</span> Běžná podnikatelská past (Chaos)
+                    <h3 class="font-display font-bold text-sm text-[#093428] flex items-center gap-2">
+                        Běžná podnikatelská past: chaos
                     </h3>
                     
                     <div class="space-y-6">
                         
-                        <div class="p-8 bg-stone-100/50 rounded-none border border-stone-200/40">
-                            <h4 class="font-display font-bold text-[#1A1A1A] text-base mb-2">Příliš mnoho nápadů, málo soustředění</h4>
-                            <p class="text-[#4A4A4A] text-sm leading-relaxed font-light">Podnikatelé často začínají pět věcí najednou. Výsledkem jsou rozpracované projekty, vyčerpaná energie a žádný hmatatelný výsledek.</p>
+                        <div class="p-8 bg-stone-100/50 border border-[#E1DFDB] rounded-2xl">
+                            <h4 class="font-display font-bold text-[#093428] text-base mb-2">Příliš mnoho nápadů, málo soustředění</h4>
+                            <p class="text-[#505E59] text-sm leading-relaxed">Podnikatelé často začínají pět věcí najednou. Výsledkem jsou rozpracované projekty, vyčerpaná energie a&nbsp;žádný hmatatelný výsledek.</p>
                         </div>
                         
-                        <div class="p-8 bg-stone-100/50 rounded-none border border-stone-200/40">
-                            <h4 class="font-display font-bold text-[#1A1A1A] text-base mb-2">Komplikovaný byznys a vnitřní chaos</h4>
-                            <p class="text-[#4A4A4A] text-sm leading-relaxed font-light">S růstem přichází složitost – další služby, složité ceníky, více e-mailů. Zakladatel se stává otrokem vlastních procesů namísto svobody.</p>
+                        <div class="p-8 bg-stone-100/50 border border-[#E1DFDB] rounded-2xl">
+                            <h4 class="font-display font-bold text-[#093428] text-base mb-2">Komplikovaný byznys a&nbsp;vnitřní chaos</h4>
+                            <p class="text-[#505E59] text-sm leading-relaxed">S růstem přichází složitost – další služby, složité ceníky, více e-mailů. Zakladatel se stává otrokem vlastních procesů namísto svobody.</p>
                         </div>
                         
                     </div>
@@ -469,20 +460,20 @@
 
                 <!-- Minimalist path box -->
                 <div class="space-y-6">
-                    <h3 class="font-display font-bold text-sm uppercase tracking-widest text-[#1A1A1A] flex items-center gap-2">
-                        <span class="text-[#5B5FE8]">🛡️</span> Cesta VISIBLE7 (Minimalismus)
+                    <h3 class="font-display font-bold text-sm text-[#093428] flex items-center gap-2">
+                        Cesta VISIBLE7: minimalismus
                     </h3>
 
                     <div class="space-y-6">
                         
-                        <div class="p-8 bg-stone-200/30 rounded-none border border-stone-300/40">
-                            <h4 class="font-display font-bold text-[#1A1A1A] text-base mb-2">Podnikatelský minimalismus</h4>
-                            <p class="text-[#4A4A4A] text-sm leading-relaxed font-light">Metodika VISIBLE7 byla vytvořena, aby vrátila do podnikání jednoduchost. Pomáhá zanechat pouze to, co má reálný dopad, a zbytek nekompromisně eliminovat.</p>
+                        <div class="p-8 bg-stone-200/30 border border-[#E1DFDB] rounded-2xl">
+                            <h4 class="font-display font-bold text-[#093428] text-base mb-2">Podnikatelský minimalismus</h4>
+                            <p class="text-[#505E59] text-sm leading-relaxed">Metodika VISIBLE7 byla vytvořena, aby vrátila do podnikání jednoduchost. Pomáhá zanechat pouze to, co má reálný dopad, a&nbsp;zbytek nekompromisně eliminovat.</p>
                         </div>
                         
-                        <div class="p-8 bg-stone-200/30 rounded-none border border-stone-300/40">
-                            <h4 class="font-display font-bold text-[#1A1A1A] text-base mb-2">Od nápadu k čisté exekuci</h4>
-                            <p class="text-[#4A4A4A] text-sm leading-relaxed font-light">Nestačí jen objevovat (discovering ideas), klíčem je disciplína dokončení (mastering execution). Naše praktické šablony a ověřené postupy vás provedou krok za krokem.</p>
+                        <div class="p-8 bg-stone-200/30 border border-[#E1DFDB] rounded-2xl">
+                            <h4 class="font-display font-bold text-[#093428] text-base mb-2">Od nápadu k&nbsp;čisté exekuci</h4>
+                            <p class="text-[#505E59] text-sm leading-relaxed">Nestačí jen objevovat (discovering ideas), klíčem je disciplína dokončení (mastering execution). Naše praktické šablony a&nbsp;ověřené postupy vás provedou krok za krokem.</p>
                         </div>
                         
                     </div>
@@ -490,44 +481,44 @@
             </div>
 
             <!-- Author Quote -->
-            <div class="mt-16 p-8 bg-stone-100 rounded-none border border-stone-200 text-center max-w-3xl mx-auto">
-                <p class="italic text-[#1A1A1A] text-base md:text-lg font-light leading-relaxed">
-                    „VISIBLE7 není jen o nástrojích a minimalizaci chyb. Je to o transformaci člověka. VISIBLE7 je proces, který vám ukazuje, že lze najít nápad, lze ho zhmotnit, spustit a vydělat na něm. Jakmile si dopřejete v hlavě svobodu, že to máte ve svých rukou, nikdy nebudete jako dřív. Stanete se podnikateli.“
+            <div class="mt-16 p-8 bg-stone-100 border border-[#E1DFDB] text-center max-w-3xl mx-auto rounded-2xl">
+                <p class="italic text-[#093428] text-base md:text-lg leading-relaxed">
+                    „VISIBLE7 není jen o&nbsp;nástrojích a&nbsp;minimalizaci chyb. Je to o&nbsp;transformaci člověka. VISIBLE7 je proces, který vám ukazuje, že lze najít nápad, lze ho zhmotnit, spustit a&nbsp;vydělat na něm. Jakmile si dopřejete v&nbsp;hlavě svobodu, že to máte ve svých rukou, nikdy nebudete jako dřív. Stanete se podnikateli.“
                 </p>
-                <div class="mt-4 font-mono text-xs uppercase tracking-[0.2em] font-semibold text-gray-500">
-                    — MICHAL MIČEK, Tvůrce metodiky VISIBLE7
+                <div class="mt-4 text-xs font-semibold text-[#505E59]">
+                    Michal Míček, tvůrce metodiky VISIBLE7
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Founder Section (Michal Micek) -->
-    <section id="zakladatel" class="py-24 bg-white text-[#1A1A1A] px-6 md:px-12 border-b border-gray-200/40 relative">
+    <section id="zakladatel" class="py-24 bg-white text-[#093428] px-6 md:px-12 border-b border-[#E1DFDB] relative">
         <div class="max-w-6xl mx-auto">
             <div class="flex justify-center mb-4">
-                <span class="font-mono text-[11px] uppercase tracking-[0.25em] bg-stone-100 text-[#1A1A1A] px-4 py-1.5 rounded-none font-bold border border-stone-200/50">
+                <span class="inline-flex rounded-full border border-[#E1DFDB] bg-white px-4 py-1.5 text-sm font-semibold text-[#0F3E2E]">
                     Zakladatel metodiky
                 </span>
             </div>
 
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="font-display font-medium text-3xl sm:text-4xl tracking-tight text-[#1A1A1A] mb-4">
+                <h2 class="font-display font-medium text-3xl sm:text-4xl tracking-tight text-[#093428] mb-4">
                     Michal Míček
                 </h2>
-                <p class="text-[#5B5FE8] text-lg font-semibold tracking-wider uppercase font-mono text-xs mb-3">
-                    Tvůrce systému VISIBLE7 & Podnikatelský minimalismus
+                <p class="text-[#0F3E2E] text-lg font-semibold text-xs mb-3">
+                    Tvůrce metodiky VISIBLE7 a&nbsp;principu podnikatelského minimalismu
                 </p>
-                <p class="text-[#4A4A4A] text-base font-light max-w-2xl mx-auto leading-relaxed">
-                    Pomáhám lidem začít podnikat chytře, jednoduše a bez zbytečné složitosti. Propojuji vzdělávání, e-commerce, AI a osobní růst do praktických systémů, které dávají řád a směr.
+                <p class="text-[#505E59] text-base max-w-2xl mx-auto leading-relaxed">
+                    Pomáhám lidem začít podnikat chytře, jednoduše a&nbsp;bez zbytečné složitosti. Propojuji vzdělávání, e-commerce, AI a&nbsp;osobní růst do praktických systémů, které dávají řád a&nbsp;směr.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
                 <!-- Left profile info -->
-                <div class="lg:col-span-5 flex flex-col justify-between p-8 sm:p-10 bg-[#F9F8F6] border border-stone-200 relative overflow-hidden">
+                <div class="lg:col-span-5 flex flex-col justify-between p-8 sm:p-10 bg-[#F4F3F0] border border-[#E1DFDB] relative overflow-hidden rounded-2xl">
                     <div>
                         <div class="flex items-center gap-4 mb-8">
-                            <div class="h-24 w-24 rounded-full bg-[#1A1A1A] border-2 border-[#5B5FE8] overflow-hidden flex-shrink-0 shadow-md">
+                            <div class="h-24 w-24 rounded-full bg-[#0F3E2E] border-2 border-[#0F3E2E] overflow-hidden flex-shrink-0 shadow-md">
                                 <img 
                                     src="/michal_micek.jpeg" 
                                     alt="Michal Míček, zakladatel metodiky VISIBLE7" 
@@ -536,28 +527,28 @@
                                 />
                             </div>
                             <div>
-                                <h3 class="font-display font-bold text-lg text-[#1A1A1A]">Michal Míček</h3>
-                                <p class="text-xs text-stone-500 font-mono uppercase tracking-widest mt-0.5">Zakladatel · Author & Strategist</p>
+                                <h3 class="font-display font-bold text-lg text-[#093428]">Michal Míček</h3>
+                                <p class="text-xs text-[#505E59] mt-0.5">Zakladatel, autor a&nbsp;stratég</p>
                             </div>
                         </div>
 
-                        <blockquote class="text-[#1A1A1A] text-base italic font-light leading-relaxed mb-8 border-l-2 border-[#5B5FE8] pl-4">
-                            „Podnikání nemusí začít velkým plánem, hned zakládat firmu nebo riskovat všechno. Začněte chytře s minimem chaosu, více testujte a dělejte skutečné, dotažené pohyby vpřed. Nastavte si, kdy a jak růst, nebo naopak nastavte si momenty bezpečného návratu, kdy se vydat jiným směrem.“
+                        <blockquote class="text-[#093428] text-base italic leading-relaxed mb-8 border-l-2 border-[#0F3E2E] pl-4">
+                            „Podnikání nemusí začít velkým plánem, hned zakládat firmu nebo riskovat všechno. Začněte chytře s&nbsp;minimem chaosu, více testujte a&nbsp;dělejte skutečné, dotažené pohyby vpřed. Nastavte si, kdy a&nbsp;jak růst, nebo naopak nastavte si momenty bezpečného návratu, kdy se vydat jiným směrem.“
                         </blockquote>
                     </div>
 
-                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-stone-200/60 text-center">
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-[#E1DFDB] text-center">
                         <div>
-                            <p class="font-display font-black text-2xl text-[#1A1A1A]">14+</p>
-                            <p class="font-mono text-[9px] uppercase text-stone-500 tracking-wider font-bold mt-1">Let praxe</p>
+                            <p class="font-display font-black text-2xl text-[#093428]">14+</p>
+                            <p class="text-sm text-[#505E59] font-bold mt-1">Let praxe</p>
                         </div>
                         <div>
-                            <p class="font-display font-black text-2xl text-[#5B5FE8]">2</p>
-                            <p class="font-mono text-[9px] uppercase text-stone-500 tracking-wider font-bold mt-1">Vzdělávací sp.</p>
+                            <p class="font-display font-black text-2xl text-[#0F3E2E]">2</p>
+                            <p class="text-sm text-[#505E59] font-bold mt-1">Vzdělávací společnosti</p>
                         </div>
                         <div>
-                            <p class="font-display font-black text-2xl text-[#1A1A1A]">1k+</p>
-                            <p class="font-mono text-[9px] uppercase text-stone-500 tracking-wider font-bold mt-1">Absolventů</p>
+                            <p class="font-display font-black text-2xl text-[#093428]">1k+</p>
+                            <p class="text-sm text-[#505E59] font-bold mt-1">Absolventů</p>
                         </div>
                     </div>
                 </div>
@@ -565,65 +556,65 @@
                 <!-- Right academic / ecosystem info -->
                 <div class="lg:col-span-7 flex flex-col justify-between gap-8">
                     <div class="space-y-6">
-                        <h3 class="font-display font-bold text-xs uppercase tracking-widest text-[#1A1A1A]">
-                            Podnikatelský & Vzdělávací Ekosystém
+                        <h3 class="font-display font-bold text-xs text-[#093428]">
+                            Podnikatelský a&nbsp;vzdělávací ekosystém
                         </h3>
 
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div class="p-5 bg-stone-50 border border-stone-200/50">
-                                <span class="font-display font-bold text-[#1A1A1A] text-xs uppercase tracking-wider block mb-1">Edu Partners</span>
-                                <p class="text-stone-500 text-xs font-light leading-relaxed">
-                                    Praktické rekvalifikace a kurzy pro změnu pracovního či podnikatelského směru.
+                            <div class="p-5 bg-stone-50 border border-[#E1DFDB] rounded-2xl">
+                                <span class="font-display font-bold text-[#093428] text-xs block mb-1">Edu Partners</span>
+                                <p class="text-[#505E59] text-xs leading-relaxed">
+                                    Praktické rekvalifikace a&nbsp;kurzy pro změnu pracovního či podnikatelského směru.
                                 </p>
                             </div>
-                            <div class="p-5 bg-stone-50 border border-stone-200/50">
-                                <span class="font-display font-bold text-[#5B5FE8] text-xs uppercase tracking-wider block mb-1">WEBS MICEK</span>
-                                <p class="text-stone-500 text-xs font-light leading-relaxed">
-                                    World Ecommerce Business School MICEK. Vyšší profesní vzdělávání, e-commerce, směr k MBA.
+                            <div class="p-5 bg-stone-50 border border-[#E1DFDB] rounded-2xl">
+                                <span class="font-display font-bold text-[#0F3E2E] text-xs block mb-1">WEBS MICEK</span>
+                                <p class="text-[#505E59] text-xs leading-relaxed">
+                                    World Ecommerce Business School MICEK. Vyšší profesní vzdělávání, e-commerce, směr k&nbsp;MBA.
                                 </p>
                             </div>
-                            <div class="p-5 bg-stone-50 border border-stone-200/50">
-                                <span class="font-display font-bold text-[#1A1A1A] text-xs uppercase tracking-wider block mb-1">AIO Marketing</span>
-                                <p class="text-stone-500 text-xs font-light leading-relaxed">
-                                    AI-first marketingová agentura a propojování moderních technologií s reálným trhem.
+                            <div class="p-5 bg-stone-50 border border-[#E1DFDB] rounded-2xl">
+                                <span class="font-display font-bold text-[#093428] text-xs block mb-1">AIO Marketing</span>
+                                <p class="text-[#505E59] text-xs leading-relaxed">
+                                    AI-first marketingová agentura a&nbsp;propojování moderních technologií s&nbsp;reálným trhem.
                                 </p>
                             </div>
                         </div>
                     </div>
 
                     <div class="space-y-4">
-                        <h3 class="font-display font-bold text-xs uppercase tracking-widest text-[#1A1A1A]">
+                        <h3 class="font-display font-bold text-xs text-[#093428]">
                             Akademické základy
                         </h3>
 
-                        <div class="space-y-3 bg-stone-50 p-6 border border-stone-200/50">
+                        <div class="space-y-3 bg-stone-50 p-6 border border-[#E1DFDB] rounded-2xl">
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
-                                <span class="font-bold text-[#1A1A1A]">Ostravská univerzita</span>
-                                <span class="text-stone-500 font-light font-mono">Psychologie & Pedagogika</span>
+                                <span class="font-bold text-[#093428]">Ostravská univerzita</span>
+                                <span class="text-[#505E59]">Psychologie a&nbsp;pedagogika</span>
                             </div>
                             <div class="h-px bg-stone-200/40"></div>
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
-                                <span class="font-bold text-[#1A1A1A]">University of Twente</span>
-                                <span class="text-stone-500 font-light font-mono">Innovation & Design</span>
+                                <span class="font-bold text-[#093428]">University of Twente</span>
+                                <span class="text-[#505E59]">Innovation and Design</span>
                             </div>
                             <div class="h-px bg-stone-200/40"></div>
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs">
-                                <span class="font-bold text-[#1A1A1A]">European Business School</span>
-                                <span class="text-stone-500 font-light font-mono">LL.M. — Business Law (fintech)</span>
+                                <span class="font-bold text-[#093428]">European Business School</span>
+                                <span class="text-[#505E59]">LL.M. – Business Law (fintech)</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="pt-2 flex flex-col sm:flex-row gap-4">
-                        <a href="https://michalmicek.cz" target="_blank" class="inline-flex items-center gap-2 font-display font-bold uppercase tracking-widest bg-[#5B5FE8] text-white hover:bg-[#1A1A1A] hover:text-white transition-all px-6 py-4 text-xs rounded-none">
+                        <a href="https://michalmicek.cz" target="_blank" class="inline-flex items-center gap-2 font-display font-bold v7-trap-btn text-[#0F3E2E] font-bold px-6 py-4 text-xs">
                             <span>Osobní web zakladatele</span>
-                            <span class="font-mono">michalmicek.cz</span>
-                            <span class="font-mono">↗</span>
+                            <span>michalmicek.cz</span>
+                            <span>↗</span>
                         </a>
-                        <a href="https://edu-partners.cz" target="_blank" class="inline-flex items-center gap-2 font-display font-bold uppercase tracking-widest bg-[#5B5FE8] text-white hover:bg-[#1A1A1A] hover:text-white transition-all px-6 py-4 text-xs rounded-none">
-                            <span>Realizace školení & info</span>
-                            <span class="font-mono">edu-partners.cz</span>
-                            <span class="font-mono">↗</span>
+                        <a href="https://edu-partners.cz" target="_blank" class="inline-flex items-center gap-2 font-display font-bold v7-trap-btn text-[#0F3E2E] font-bold px-6 py-4 text-xs">
+                            <span>Školení a&nbsp;firemní realizace</span>
+                            <span>edu-partners.cz</span>
+                            <span>↗</span>
                         </a>
                     </div>
                 </div>
@@ -634,81 +625,93 @@
     <!-- Framework Overview Map Grid Section -->
     <span id="prehled-metodiky"></span>
 
-    <!-- Beta App Banner -->
-    <section id="beta-aplikace" class="py-16 bg-[#FAF9F6] border-b border-gray-200/40 px-6 md:px-12 relative overflow-hidden">
-        <div class="max-w-5xl mx-auto">
-            <div class="bg-[#1A1A1A] border-2 border-[#1A1A1A] p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden">
-                <div class="absolute -right-16 -top-16 w-[220px] h-[220px] rounded-full border border-[#5B5FE8] opacity-[0.08] pointer-events-none"></div>
-
-                <div class="flex items-start gap-4 relative z-10">
-                    <span class="font-mono text-[10px] uppercase tracking-[0.2em] bg-[#5B5FE8] text-white px-3 py-1.5 font-bold flex-shrink-0 mt-1">
-                        Beta · Nová appka
-                    </span>
-                    <div>
-                        <h3 class="font-display font-bold text-xl text-white mb-2">
-                            Vyzkoušej si VISIBLE7 jako aplikaci
-                        </h3>
-                        <p class="text-white/70 text-sm font-light leading-relaxed max-w-xl">
-                            Metodiku si teď můžeš projít i interaktivně. Beta verze aplikace je k dispozici k vyzkoušení – zpětná vazba je vítaná.
-                        </p>
-                    </div>
+    <!-- Metodika v aplikaci -->
+    <section id="aplikace" class="py-20 bg-[#0F3E2E] text-white px-4 sm:px-8 md:px-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-6">
+                <p class="text-sm font-semibold text-[#C6F05C]">Metodika v&nbsp;praxi</p>
+                <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Všech 7 bran si projdete v&nbsp;aplikaci VISIBLE7</h2>
+                <p class="mt-4 text-lg leading-relaxed text-white/75">
+                    Tady je metodika popsaná. Na visible7.io ji použijete na svůj vlastní nápad: krok za krokem, s&nbsp;videi, výpočty a&nbsp;lidmi, kteří vám poradí.
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
+                    <a href="https://visible7.io/?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=aplikace" class="v7-trap-btn inline-flex h-14 items-center justify-center pl-7 text-base font-bold text-[#0F3E2E]">
+                        Otestovat nápad zdarma
+                    </a>
+                    <span class="text-sm text-white/60">Pro registraci stačí e-mail. Platební kartu nezadáváte.</span>
                 </div>
-                <a href="https://visible7.io" target="_blank" class="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#5B5FE8] text-white hover:bg-[#4347C4] transition-colors font-bold text-xs uppercase tracking-widest rounded-none text-center relative z-10">
-                    Vyzkoušet beta verzi
-                    <span class="font-mono">↗</span>
-                </a>
             </div>
+            <ul class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <li class="rounded-2xl border border-white/15 bg-white/5 p-5">
+                    <p class="text-3xl font-extrabold text-[#C6F05C]">438</p>
+                    <p class="mt-1 font-bold">krátkých video lekcí</p>
+                    <p class="mt-1 text-sm text-white/65">Přes 50 hodin videí. Najdete přesně ten návod, který právě potřebujete.</p>
+                </li>
+                <li class="rounded-2xl border border-white/15 bg-white/5 p-5">
+                    <p class="text-3xl font-extrabold text-[#C6F05C]">24&nbsp;měs.</p>
+                    <p class="mt-1 font-bold">finanční plán</p>
+                    <p class="mt-1 text-sm text-white/65">Příjmy, náklady, bod zvratu a&nbsp;PNO spočítané pro váš typ byznysu.</p>
+                </li>
+                <li class="rounded-2xl border border-white/15 bg-white/5 p-5">
+                    <p class="text-3xl font-extrabold text-[#C6F05C]">AI</p>
+                    <p class="mt-1 font-bold">asistenti pro jednotlivé brány</p>
+                    <p class="mt-1 text-sm text-white/65">Navrhnou texty do Lean Canvasu a&nbsp;odhadnou obvyklá čísla.</p>
+                </li>
+                <li class="rounded-2xl border border-white/15 bg-white/5 p-5">
+                    <p class="text-3xl font-extrabold text-[#C6F05C]">Lidé</p>
+                    <p class="mt-1 font-bold">seniorní poradci</p>
+                    <p class="mt-1 text-sm text-white/65">Lektoři Edu Partners, kteří sami podnikají. A&nbsp;osvědčení za dokončené brány.</p>
+                </li>
+            </ul>
         </div>
     </section>
 
     <!-- Why Metodika Created & Holistic Diagram System Section -->
-    <section id="proc-metodika" class="py-24 bg-[#FAF9F6] text-[#1A1A1A] px-6 md:px-12 border-b border-gray-200/40 relative">
+    <section id="proc-metodika" class="py-24 bg-[#F4F3F0] text-[#093428] px-6 md:px-12 border-b border-[#E1DFDB] relative">
         <div class="max-w-6xl mx-auto">
             
             <div class="flex justify-center mb-4">
-                <span class="font-mono text-[11px] uppercase tracking-[0.25em] bg-[#1A1A1A] text-[#FAF9F6] px-4 py-1.5 rounded-none font-bold">
-                    Příběh & Filozofie
+                <span class="inline-flex rounded-full border border-[#E1DFDB] bg-white px-4 py-1.5 text-sm font-semibold text-[#0F3E2E]">
+                    Příběh a&nbsp;filozofie
                 </span>
             </div>
 
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="font-display font-medium text-3xl sm:text-4xl tracking-tight text-[#1A1A1A] mb-4">
-                    Proč vznikla metodika <span class="font-bold">VISIBLE 7 MICEK™</span>?
+                <h2 class="font-display font-medium text-3xl sm:text-4xl tracking-tight text-[#093428] mb-4">
+                    Proč vznikla metodika <span class="font-bold">VISIBLE7 MICEK®</span>?
                 </h2>
-                <div class="h-1 w-20 bg-[#5B5FE8] mx-auto mb-6"></div>
-                <p class="text-[#4A4A4A] text-lg font-light leading-relaxed">
-                    Metodika VISIBLE7 MICEK™ nevznikla „od stolu“, ale z reálných potřeb více než 1000 lidí, kteří s námi za posledních deset let prošli cestou od nápadu až po funkční online projekt.
+                <div class="h-1 w-20 bg-[#0F3E2E] mx-auto mb-6"></div>
+                <p class="text-[#505E59] text-lg leading-relaxed">
+                    Metodika VISIBLE7 MICEK® nevznikla „od stolu“, ale z&nbsp;reálných potřeb více než 1000 lidí, kteří s&nbsp;námi za posledních deset let prošli cestou od nápadu až po funkční online projekt.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 items-start">
-                <div class="space-y-6 text-[#1A1A1A]/90 font-light text-base leading-relaxed p-6 sm:p-8 bg-white border border-stone-200">
+                <div class="space-y-6 text-[#093428]/90 text-base leading-relaxed p-6 sm:p-8 bg-white border border-[#E1DFDB] rounded-2xl">
                     <p>
-                        Tito lidé chtěli uspět – založit e-shop, změnit kariéru, rozjet podnikání, nebo růst v rámci firmy. Ale často nevěděli, kde začít, čemu se věnovat dřív a co dělat, když dojde energie.
+                        Tito lidé chtěli uspět – založit e-shop, změnit kariéru, rozjet podnikání, nebo růst v&nbsp;rámci firmy. Ale často nevěděli, kde začít, čemu se věnovat dřív a&nbsp;co dělat, když dojde energie.
                     </p>
-                    <p class="font-medium text-[#1A1A1A]">
-                        Z těchto zkušeností vznikl praktický a ověřený rámec, který dává jasný cíl – dostat vás z bodu A (kde jste teď) do bodu B (kde chcete být), bez zbytečného balastu a ztrácení času.
+                    <p class="font-medium text-[#093428]">
+                        Z&nbsp;těchto zkušeností vznikl praktický a&nbsp;ověřený rámec, který dává jasný cíl – dostat vás z&nbsp;bodu A&nbsp;(kde jste teď) do bodu B (kde chcete být), bez zbytečného balastu a&nbsp;ztrácení času.
                     </p>
                     <div class="pt-4 border-t border-stone-100 flex items-start gap-4">
-                        <span class="text-[#5B5FE8] text-xl font-bold">⚡</span>
-                        <p class="text-sm text-stone-600 italic">
-                            Jen to, co funguje – konkrétní nástroje, šablony, struktura a moderní AI pro extrémní urychlení vaší cesty.
+                                                <p class="text-sm text-[#505E59] italic">
+                            Jen to, co funguje – konkrétní nástroje, šablony, struktura a&nbsp;moderní AI pro extrémní urychlení vaší cesty.
                         </p>
                     </div>
                 </div>
 
-                <div class="space-y-6 text-[#1A1A1A]/90 font-light text-base leading-relaxed p-6 sm:p-8 bg-white border border-stone-200">
-                    <h4 class="font-display font-bold text-lg text-[#1A1A1A]">Fáze kritického zlomu</h4>
+                <div class="space-y-6 text-[#093428]/90 text-base leading-relaxed p-6 sm:p-8 bg-white border border-[#E1DFDB] rounded-2xl">
+                    <h4 class="font-display font-bold text-lg text-[#093428]">Fáze kritického zlomu</h4>
                     <p>
-                        Zjistili jsme, že největší úbytek motivace přichází ve fázi <strong>Development</strong> – právě tam lidé nejčastěji ztroskotají. Proto jsme připravili vzorové modely, předpřipravené scénáře a propočtené šablony, aby se váš projekt pohnul rychle kupředu bez zbytečného přešlapování.
+                        Zjistili jsme, že největší úbytek motivace přichází v&nbsp;bráně <strong>Implementace</strong> – právě tam lidé nejčastěji ztroskotají. Proto jsme připravili vzorové modely, předpřipravené scénáře a&nbsp;propočtené šablony, aby se váš projekt pohnul rychle kupředu bez zbytečného přešlapování.
                     </p>
                     <p>
-                        Uspět může téměř každý. V dnešní době už není potřeba mít miliony. Stačí jasná struktura, odvaha udělat první krok a ochota učit se. S minimálními náklady můžete dokázat velké věci.
+                        Uspět může téměř každý. V&nbsp;dnešní době už není potřeba mít miliony. Stačí jasná struktura, odvaha udělat první krok a&nbsp;ochota učit se. S&nbsp;minimálními náklady můžete dokázat velké věci.
                     </p>
                     <div class="pt-4 border-t border-stone-100 flex items-start gap-4">
-                        <span class="text-stone-500 text-xl">👥</span>
-                        <p class="text-sm text-stone-500">
-                            Součástí programu je také komunita lidí na stejné vlně – protože podnikání je cesta, kterou je lepší jít společně s podporou ostatních.
+                                                <p class="text-sm text-[#505E59]">
+                            Součástí programu je také komunita lidí na stejné vlně – protože podnikání je cesta, kterou je lepší jít společně s&nbsp;podporou ostatních.
                         </p>
                     </div>
                 </div>
@@ -716,111 +719,116 @@
 
             <div class="mb-20">
                 <div class="text-center mb-10">
-                    <span class="font-mono text-[10px] uppercase tracking-widest text-stone-500 block mb-2">Segmentace účastníků</span>
-                    <h3 class="font-display font-bold text-2xl text-[#1A1A1A]">4 typické skupiny, které s námi rostou</h3>
+                    <span class="text-sm text-[#505E59] block mb-2">Segmentace účastníků</span>
+                    <h3 class="font-display font-bold text-2xl text-[#093428]">4 typické skupiny, které s&nbsp;námi rostou</h3>
+                    <p class="text-sm text-[#505E59] mt-2">V aplikaci si každý vybere jednu ze tří cest podle toho, kde právě je.</p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="p-6 bg-white border border-teal-200/60 relative hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="p-6 bg-white border border-[#E1DFDB] hover:border-[#34845A] transition-colors relative flex flex-col justify-between rounded-2xl">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="font-display font-black text-xl text-[#1A1A1A]">GreenBee</span>
-                                <span class="w-3.5 h-3.5 rounded-full bg-teal-500"></span>
+                                <span class="font-display font-black text-xl text-[#093428]">GreenBee</span>
+                                <span class="w-3.5 h-3.5 rounded-full bg-[#A3D2B0]"></span>
                             </div>
-                            <p class="text-xs text-stone-600 font-light leading-relaxed mb-6">
-                                Začíná od nuly a hledá co nejbezpečnější, srozumitelný a doprovázený start.
+                            <p class="text-xs text-[#505E59] leading-relaxed mb-6">
+                                Začíná od nuly a&nbsp;hledá co nejbezpečnější, srozumitelný a&nbsp;doprovázený start.
                             </p>
                         </div>
                         <div class="space-y-2 pt-4 border-t border-stone-100">
-                            <div class="flex items-center gap-2 text-[11px] text-stone-500">
+                            <div class="flex items-center gap-2 text-sm text-[#505E59]">
                                 <span>✓</span> <span>První krůčky bez paniky</span>
                             </div>
-                            <div class="flex items-center gap-2 text-[11px] text-stone-500">
+                            <div class="flex items-center gap-2 text-sm text-[#505E59]">
                                 <span>✓</span> <span>Jasně strukturované základy</span>
                             </div>
-                            <div class="flex items-center gap-2 text-[11px] text-stone-500">
+                            <div class="flex items-center gap-2 text-sm text-[#505E59]">
                                 <span>✓</span> <span>Důraz na ujasnění vize</span>
                             </div>
                         </div>
+                        <a href="https://visible7.io/zacit-podnikat?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=persony" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0F3E2E] hover:underline underline-offset-4">V aplikaci: Chci podnikat, ale nevím v&nbsp;čem →</a>
                     </div>
 
-                    <div class="p-6 bg-white border border-indigo-200/60 relative hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="p-6 bg-white border border-[#E1DFDB] hover:border-[#34845A] transition-colors relative flex flex-col justify-between rounded-2xl">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="font-display font-black text-xl text-[#1A1A1A]">JobBoy</span>
-                                <span class="w-3.5 h-3.5 rounded-full bg-[#5B5FE8]"></span>
+                                <span class="font-display font-black text-xl text-[#093428]">JobBoy</span>
+                                <span class="w-3.5 h-3.5 rounded-full bg-[#6FB083]"></span>
                             </div>
-                            <p class="text-xs text-stone-600 font-light leading-relaxed mb-6">
-                                Touží změnit dosavadní práci, osamostatnit se a najít smysluplné online uplatnění.
+                            <p class="text-xs text-[#505E59] leading-relaxed mb-6">
+                                Touží změnit dosavadní práci, osamostatnit se a&nbsp;najít smysluplné online uplatnění.
                             </p>
                         </div>
                         <div class="space-y-2 pt-4 border-t border-stone-100">
-                            <div class="flex items-center gap-2 text-[11px] text-stone-500">
+                            <div class="flex items-center gap-2 text-sm text-[#505E59]">
                                 <span>✓</span> <span>Rekvalifikace & digitální růst</span>
                             </div>
-                            <div class="flex items-center gap-2 text-[11px] text-stone-500">
+                            <div class="flex items-center gap-2 text-sm text-[#505E59]">
                                 <span>✓</span> <span>Příprava na freelancing</span>
                             </div>
-                            <div class="flex items-center gap-2 text-[11px] text-stone-500">
+                            <div class="flex items-center gap-2 text-sm text-[#505E59]">
                                 <span>✓</span> <span>Praktické e-commerce dovednosti</span>
                             </div>
                         </div>
+                        <a href="https://visible7.io/zacit-podnikat?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=persony" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0F3E2E] hover:underline underline-offset-4">V aplikaci: Chci podnikat, ale nevím v&nbsp;čem →</a>
                     </div>
 
-                    <div class="p-6 bg-white border border-blue-200/60 relative hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="p-6 bg-white border border-[#E1DFDB] hover:border-[#34845A] transition-colors relative flex flex-col justify-between rounded-2xl">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="font-display font-black text-xl text-[#1A1A1A]">Venture</span>
-                                <span class="w-3.5 h-3.5 rounded-full bg-blue-500"></span>
+                                <span class="font-display font-black text-xl text-[#093428]">Venture</span>
+                                <span class="w-3.5 h-3.5 rounded-full bg-[#2B7350]"></span>
                             </div>
-                            <p class="text-xs text-stone-600 font-light leading-relaxed mb-6">
-                                Má konkrétní podnikatelský nápad a potřebuje ho uchopit naplno, strategicky a s dotažením.
+                            <p class="text-xs text-[#505E59] leading-relaxed mb-6">
+                                Má konkrétní podnikatelský nápad a&nbsp;potřebuje ho uchopit naplno, strategicky a&nbsp;s&nbsp;dotažením.
                             </p>
                         </div>
                         <div class="space-y-2 pt-4 border-t border-stone-100">
-                            <div class="flex items-center gap-2 text-[11px] text-stone-500">
+                            <div class="flex items-center gap-2 text-sm text-[#505E59]">
                                 <span>✓</span> <span>E-shop či digitální produkt</span>
                             </div>
-                            <div class="flex items-center gap-2 text-[11px] text-stone-500">
+                            <div class="flex items-center gap-2 text-sm text-[#505E59]">
                                 <span>✓</span> <span>Ověření tržního businessu</span>
                             </div>
-                            <div class="flex items-center gap-2 text-[11px] text-stone-500">
-                                <span>✓</span> <span>Ekonomická kalkulace a marže</span>
+                            <div class="flex items-center gap-2 text-sm text-[#505E59]">
+                                <span>✓</span> <span>Ekonomická kalkulace a&nbsp;marže</span>
                             </div>
                         </div>
+                        <a href="https://visible7.io/?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=persony" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0F3E2E] hover:underline underline-offset-4">V aplikaci: Mám podnikatelský nápad →</a>
                     </div>
 
-                    <div class="p-6 bg-white border border-rose-200/60 relative hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div class="p-6 bg-white border border-[#E1DFDB] hover:border-[#34845A] transition-colors relative flex flex-col justify-between rounded-2xl">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="font-display font-black text-xl text-[#1A1A1A]">Chuck Norris</span>
-                                <span class="w-3.5 h-3.5 rounded-full bg-rose-500"></span>
+                                <span class="font-display font-black text-xl text-[#093428]">Chuck Norris</span>
+                                <span class="w-3.5 h-3.5 rounded-full bg-[#0F3E2E]"></span>
                             </div>
-                            <p class="text-xs text-stone-600 font-light leading-relaxed mb-6">
-                                Již reálně a aktivně podniká, ale chce stabilně škálovat, optimalizovat a získat konstruktivní zpětnou vazbu.
+                            <p class="text-xs text-[#505E59] leading-relaxed mb-6">
+                                Již reálně a&nbsp;aktivně podniká, ale chce stabilně škálovat, optimalizovat a&nbsp;získat konstruktivní zpětnou vazbu.
                             </p>
                         </div>
                         <div class="space-y-2 pt-4 border-t border-stone-100">
-                            <div class="flex items-center gap-2 text-[11px] text-stone-500">
+                            <div class="flex items-center gap-2 text-sm text-[#505E59]">
                                 <span>✓</span> <span>Pokročilá automatizace</span>
                             </div>
-                            <div class="flex items-center gap-2 text-[11px] text-stone-500">
-                                <span>✓</span> <span>Budování týmu a procesů</span>
+                            <div class="flex items-center gap-2 text-sm text-[#505E59]">
+                                <span>✓</span> <span>Budování týmu a&nbsp;procesů</span>
                             </div>
-                            <div class="flex items-center gap-2 text-[11px] text-stone-500">
+                            <div class="flex items-center gap-2 text-sm text-[#505E59]">
                                 <span>✓</span> <span>Napojení na partnery</span>
                             </div>
                         </div>
+                        <a href="https://visible7.io/uz-podnikam?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=persony" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0F3E2E] hover:underline underline-offset-4">V aplikaci: Už podnikám, chci zákazníky online →</a>
                     </div>
                 </div>
             </div>
 
-            <div class="border border-stone-200 bg-white p-8 sm:p-10 mb-20">
+            <div class="border border-[#E1DFDB] bg-white p-8 sm:p-10 mb-20 rounded-2xl">
                 <div class="mb-6 text-center">
-                    <span class="font-mono text-[11px] uppercase tracking-widest text-[#5B5FE8] font-bold block mb-1">Popis celostního přístupu</span>
-                    <h3 class="font-display font-bold text-2xl text-[#1A1A1A]">Cesta a milníky programu (Vizualizace růstu)</h3>
-                    <p class="text-stone-500 text-xs font-light max-w-2xl mx-auto mt-2">
-                        Základem programu je strmý rozvoj dovedností a osobního nastavení.
+                    <span class="text-sm text-[#0F3E2E] font-bold block mb-1">Popis celostního přístupu</span>
+                    <h3 class="font-display font-bold text-2xl text-[#093428]">Cesta a&nbsp;milníky programu (Vizualizace růstu)</h3>
+                    <p class="text-[#505E59] text-xs max-w-2xl mx-auto mt-2">
+                        Základem programu je strmý rozvoj dovedností a&nbsp;osobního nastavení.
                     </p>
                 </div>
 
@@ -830,15 +838,15 @@
                     <div class="lg:col-span-8 flex flex-col space-y-4">
 
                         <!-- Interactive SVG/HTML Mode Container -->
-                        <div id="interactive-mode-container" class="relative w-full overflow-hidden bg-white border-2 border-[#1A1A1A] p-4 sm:p-6 select-none min-h-[420px] flex flex-col justify-between">
+                        <div id="interactive-mode-container" class="relative w-full overflow-hidden bg-white border-2 border-[#0F3E2E] p-4 sm:p-6 select-none min-h-[420px] flex flex-col justify-between rounded-2xl">
                             
                             <!-- Top-level header row matching the image -->
                             <div class="flex justify-between items-center mb-8 border-b border-stone-100 pb-3">
-                                <span class="flex items-center gap-1.5 font-sans text-[11px] font-black text-stone-600 uppercase tracking-widest">
-                                    <span class="text-rose-500 font-extrabold text-sm">↗</span> ROZVOJ DOVEDNOSTÍ & MINDSET
+                                <span class="flex items-center gap-1.5 font-sans text-sm font-black text-[#505E59]">
+                                    Rozvoj dovedností a&nbsp;mindset
                                 </span>
-                                <span class="text-stone-450 font-mono text-[9px] uppercase tracking-wider font-bold">
-                                    INTERACTIVE SCHEMA
+                                <span class="text-[#505E59] text-sm font-bold">
+                                    Interaktivní schéma
                                 </span>
                             </div>
 
@@ -846,56 +854,56 @@
                             <div class="relative w-full h-[260px] flex-1">
                                 
                                 <!-- Horizontal grid lines -->
-                                <div class="absolute top-[10%] left-0 right-0 h-px border-t border-dashed border-stone-250"></div>
-                                <div class="absolute top-[35%] left-0 right-0 h-px border-t border-dashed border-stone-250"></div>
-                                <div class="absolute top-[60%] left-0 right-0 h-px border-t border-dashed border-stone-250"></div>
-                                <div class="absolute top-[85%] left-0 right-0 h-px border-t border-dashed border-stone-250"></div>
+                                <div class="absolute top-[10%] left-0 right-0 h-px border-t border-dashed border-[#E1DFDB]"></div>
+                                <div class="absolute top-[35%] left-0 right-0 h-px border-t border-dashed border-[#E1DFDB]"></div>
+                                <div class="absolute top-[60%] left-0 right-0 h-px border-t border-dashed border-[#E1DFDB]"></div>
+                                <div class="absolute top-[85%] left-0 right-0 h-px border-t border-dashed border-[#E1DFDB]"></div>
 
                                 <!-- Left Column labels matching the original image boxes -->
                                 <div class="absolute top-[10%] left-2 -translate-y-1/2 z-10">
-                                    <div class="border border-rose-300 text-rose-600 bg-rose-50/70 px-2.5 py-1 text-[10px] font-mono font-bold tracking-wider rounded-xs whitespace-nowrap">
+                                    <div class="border border-[#C2DFCB] text-[#22603F] bg-[#F1F7F2] px-2.5 py-1 text-sm font-bold rounded-xs whitespace-nowrap">
                                         CHUCK NORRIS
                                     </div>
                                 </div>
                                 <div class="absolute top-[35%] left-2 -translate-y-1/2 z-10">
-                                    <div class="border border-blue-300 text-blue-600 bg-blue-50/70 px-2.5 py-1 text-[10px] font-mono font-bold tracking-wider rounded-xs whitespace-nowrap">
+                                    <div class="border border-[#C2DFCB] text-[#22603F] bg-[#F1F7F2] px-2.5 py-1 text-sm font-bold rounded-xs whitespace-nowrap">
                                         VENTURE
                                     </div>
                                 </div>
                                 <div class="absolute top-[60%] left-2 -translate-y-1/2 z-10">
-                                    <div class="border border-indigo-300 text-indigo-600 bg-indigo-50/70 px-2.5 py-1 text-[10px] font-mono font-bold tracking-wider rounded-xs whitespace-nowrap">
+                                    <div class="border border-[#C2DFCB] text-[#22603F] bg-[#F1F7F2] px-2.5 py-1 text-sm font-bold rounded-xs whitespace-nowrap">
                                         JOBBOY
                                     </div>
                                 </div>
                                 <div class="absolute top-[85%] left-2 -translate-y-1/2 z-10">
-                                    <div class="border border-teal-300 text-teal-600 bg-teal-50/70 px-2.5 py-1 text-[10px] font-mono font-bold tracking-wider rounded-xs whitespace-nowrap">
+                                    <div class="border border-[#C2DFCB] text-[#22603F] bg-[#F1F7F2] px-2.5 py-1 text-sm font-bold rounded-xs whitespace-nowrap">
                                         GREENBEE
                                     </div>
                                 </div>
 
                                 <!-- Right column labels matching the image levels -->
-                                <div class="absolute top-[10%] right-2 -translate-y-1/2 text-[9px] font-mono text-stone-400 font-bold uppercase whitespace-nowrap">
+                                <div class="absolute top-[10%] right-2 -translate-y-1/2 text-sm text-[#505E59] font-bold whitespace-nowrap">
                                     Škálování & Automatizace
                                 </div>
-                                <div class="absolute top-[35%] right-2 -translate-y-1/2 text-[9px] font-mono text-stone-400 font-bold uppercase whitespace-nowrap">
+                                <div class="absolute top-[35%] right-2 -translate-y-1/2 text-sm text-[#505E59] font-bold whitespace-nowrap">
                                     Ověřený Produkt / Firmy
                                 </div>
-                                <div class="absolute top-[60%] right-2 -translate-y-1/2 text-[9px] font-mono text-stone-400 font-bold uppercase whitespace-nowrap">
+                                <div class="absolute top-[60%] right-2 -translate-y-1/2 text-sm text-[#505E59] font-bold whitespace-nowrap">
                                     Změna kariéry / E-commerce
                                 </div>
-                                <div class="absolute top-[85%] right-2 -translate-y-1/2 text-[9px] font-mono text-stone-400 font-bold uppercase whitespace-nowrap">
+                                <div class="absolute top-[85%] right-2 -translate-y-1/2 text-sm text-[#505E59] font-bold whitespace-nowrap">
                                     Start / První krůčky
                                 </div>
 
                                 <!-- PODPORA AKCELERÁTOR background bounding box -->
-                                <div class="absolute top-[5%] bottom-[12%] left-[34%] right-[38%] border-2 border-dashed border-[#5B5FE8]/35 bg-[#5B5FE8]/[0.015] rounded-xs pointer-events-none"></div>
-                                <div class="absolute top-[5%] left-[34%] bg-[#FAF9F6] text-indigo-700 border border-indigo-200 px-2 py-0.5 text-[8px] font-mono font-bold uppercase tracking-wider -translate-y-1/2 z-10">
+                                <div class="absolute top-[5%] bottom-[12%] left-[34%] right-[38%] border-2 border-dashed border-[#34845A]/40 bg-[#34845A]/[0.03] rounded-xs pointer-events-none"></div>
+                                <div class="absolute top-[5%] left-[34%] bg-white text-[#22603F] border border-[#C2DFCB] px-2 py-0.5 text-[8px] font-bold -translate-y-1/2 z-10">
                                     PODPORA AKCELERÁTOR
                                 </div>
 
                                 <!-- "Napojení na partnery" tag hovering Node 4 -->
                                 <div class="absolute top-[22%] left-[64%] flex flex-col items-center z-10 select-none">
-                                    <div class="bg-white border border-stone-300 px-2.5 py-1 text-[8px] font-mono font-bold text-stone-700 shadow-xs uppercase tracking-wide">
+                                    <div class="bg-white border border-[#E1DFDB] px-2.5 py-1 text-[8px] font-bold text-[#505E59] shadow-xs tracking-wide">
                                         Napojení na partnery
                                     </div>
                                     <div class="w-px h-6 border-l border-dashed border-stone-400"></div>
@@ -903,62 +911,58 @@
 
                                 <svg viewBox="0 0 1000 400" class="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
                                     <defs>
-                                        <linearGradient id="curveDesignGrad-exp" x1="0%" y1="100%" x2="100%" y2="0%">
-                                            <stop offset="0%" stop-color="#EAB308" stop-opacity="0.8"></stop>
-                                            <stop offset="60%" stop-color="#F97316" stop-opacity="0.9"></stop>
-                                            <stop offset="100%" stop-color="#EF4444" stop-opacity="1"></stop>
-                                        </linearGradient>
+
                                     </defs>
-                                    <path d="M 120 340 C 350 320, 500 240, 780 70" fill="none" stroke="url(#curveDesignGrad-exp)" stroke-width="6.5" stroke-linecap="round"></path>
+                                    <path d="M 120 340 C 350 320, 500 240, 780 70" fill="none" stroke="#34845A" stroke-width="6.5" stroke-linecap="round"></path>
                                 </svg>
 
-                                <!-- Purple Circles -->
+                                <!-- Body změny 1–4 -->
                                 <div onclick="showNodeDetail('greenbee')" class="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer z-20" style="left: 20%; top: 85%;">
                                     <div class="relative">
-                                        <span class="absolute -inset-2 bg-violet-500/20 rounded-full animate-pulse"></span>
-                                        <div class="w-8 h-8 bg-violet-600 border-2 border-white rounded-full flex items-center justify-center font-display text-xs text-white font-black shadow">1</div>
+                                        <span class="absolute -inset-2 bg-[#C6F05C]/50 rounded-full"></span>
+                                        <div class="w-8 h-8 bg-[#0F3E2E] border-2 border-white rounded-full flex items-center justify-center font-display text-xs text-white font-black shadow">1</div>
                                     </div>
                                 </div>
 
                                 <div onclick="showNodeDetail('jobboy')" class="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer z-20" style="left: 46%; top: 60%;">
                                     <div class="relative">
-                                        <span class="absolute -inset-2 bg-violet-500/20 rounded-full animate-pulse"></span>
-                                        <div class="w-8 h-8 bg-violet-600 border-2 border-white rounded-full flex items-center justify-center font-display text-xs text-white font-black shadow">2</div>
+                                        <span class="absolute -inset-2 bg-[#C6F05C]/50 rounded-full"></span>
+                                        <div class="w-8 h-8 bg-[#0F3E2E] border-2 border-white rounded-full flex items-center justify-center font-display text-xs text-white font-black shadow">2</div>
                                     </div>
                                 </div>
 
                                 <div onclick="showNodeDetail('venture')" class="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer z-20" style="left: 62%; top: 35%;">
                                     <div class="relative">
-                                        <span class="absolute -inset-2 bg-violet-500/20 rounded-full animate-pulse"></span>
-                                        <div class="w-8 h-8 bg-violet-600 border-2 border-white rounded-full flex items-center justify-center font-display text-xs text-white font-black shadow">3</div>
+                                        <span class="absolute -inset-2 bg-[#C6F05C]/50 rounded-full"></span>
+                                        <div class="w-8 h-8 bg-[#0F3E2E] border-2 border-white rounded-full flex items-center justify-center font-display text-xs text-white font-black shadow">3</div>
                                     </div>
                                 </div>
 
                                 <div onclick="showNodeDetail('chucknorris')" class="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer z-20" style="left: 74%; top: 10%;">
                                     <div class="relative">
-                                        <span class="absolute -inset-2 bg-violet-500/20 rounded-full animate-pulse"></span>
-                                        <div class="w-8 h-8 bg-violet-600 border-2 border-white rounded-full flex items-center justify-center font-display text-xs text-white font-black shadow">4</div>
+                                        <span class="absolute -inset-2 bg-[#C6F05C]/50 rounded-full"></span>
+                                        <div class="w-8 h-8 bg-[#0F3E2E] border-2 border-white rounded-full flex items-center justify-center font-display text-xs text-white font-black shadow">4</div>
                                     </div>
                                 </div>
 
                             </div>
 
                             <!-- Horizontal footer text under curves -->
-                            <div class="flex justify-between items-center text-[10px] font-mono tracking-wider uppercase border-t border-stone-100 pt-3 mt-4">
-                                <span class="font-bold text-stone-600">SLUŽBY EDU PARTNERS (Základy, Rekvalifikace)</span>
-                                <span class="font-bold text-[#5B5FE8]">World E-commerce Business School MICEK</span>
+                            <div class="flex justify-between items-center text-sm border-t border-stone-100 pt-3 mt-4">
+                                <span class="font-bold text-[#505E59]">SLUŽBY EDU PARTNERS (Základy, Rekvalifikace)</span>
+                                <span class="font-bold text-[#0F3E2E]">World E-commerce Business School MICEK</span>
                             </div>
 
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 pt-4 border-t border-stone-200/60 text-xs text-stone-600">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 pt-4 border-t border-[#E1DFDB] text-xs text-[#505E59]">
                             <div>
-                                <p class="font-bold text-stone-700">📈 Červená křivka</p>
-                                <p class="font-light mt-0.5">Znázorňuje strmý růst vašich schopností, klíčových znalostí i zdravé podnikatelské odvahy.</p>
+                                <p class="font-bold text-[#505E59]">Křivka růstu</p>
+                                <p class="mt-0.5">Znázorňuje strmý růst vašich schopností, klíčových znalostí i&nbsp;zdravé podnikatelské odvahy.</p>
                             </div>
                             <div>
-                                <p class="font-bold text-stone-700">🟣 Fialové body (Moment změny)</p>
-                                <p class="font-light mt-0.5">Milníky reálného posunu. Okamžiky hlubokého pochopení, kdy se z teoretických znalostí stává reálně generovatelná hodnota. Datově podložený úspěch!</p>
+                                <p class="font-bold text-[#505E59]">Body 1–4: moment změny</p>
+                                <p class="mt-0.5">Milníky reálného posunu. Okamžiky hlubokého pochopení, kdy se z&nbsp;teoretických znalostí stává reálně generovatelná hodnota. Datově podložený úspěch!</p>
                             </div>
                         </div>
 
@@ -966,105 +970,105 @@
 
                     <!-- Static node detail container -->
                     <div class="lg:col-span-4 flex flex-col justify-between gap-4">
-                        <div id="static-node-box" class="bg-stone-50 border border-stone-200 p-4 min-h-[50px] flex items-center justify-center text-xs text-center font-mono text-stone-500">
-                            Najeďte na fialová čísla [ 1 – 4 ] v grafu vyše, nebo klikněte k zobrazení detailu.
+                        <div id="static-node-box" class="bg-stone-50 border border-[#E1DFDB] p-4 min-h-[50px] flex items-center justify-center text-xs text-center text-[#505E59] rounded-2xl">
+                            Klikněte na body 1–4 v&nbsp;grafu a&nbsp;uvidíte detail.
                         </div>
                     </div>
 
                     <div class="lg:col-span-4 flex flex-col gap-6">
                         <div class="space-y-4">
-                            <h4 class="font-display font-bold text-xs uppercase tracking-widest text-[#1A1A1A] pb-2 border-b border-stone-200">
+                            <h4 class="font-display font-bold text-xs text-[#093428] pb-2 border-b border-[#E1DFDB]">
                                 Dvě hlavní motivace účastníků
                             </h4>
-                            <div class="p-4 bg-stone-50 border border-stone-200">
-                                <span class="font-mono text-[9px] uppercase font-bold text-[#5B5FE8] block mb-1">Motivace A</span>
-                                <span class="font-display font-bold text-sm text-[#1A1A1A]">Chci se naučit konkrétní dovednost</span>
-                                <p class="text-stone-500 text-xs font-light leading-relaxed mt-1">
-                                    Tvorbu stabilního e-shopu, automatizovaný marketing, nebo programovou práci s nástroji AI.
+                            <div class="p-4 bg-stone-50 border border-[#E1DFDB] rounded-2xl">
+                                <span class="text-sm font-bold text-[#0F3E2E] block mb-1">Motivace A</span>
+                                <span class="font-display font-bold text-sm text-[#093428]">Chci se naučit konkrétní dovednost</span>
+                                <p class="text-[#505E59] text-xs leading-relaxed mt-1">
+                                    Tvorbu stabilního e-shopu, automatizovaný marketing, nebo programovou práci s&nbsp;nástroji AI.
                                 </p>
                             </div>
-                            <div class="p-4 bg-stone-50 border border-stone-200">
-                                <span class="font-mono text-[9px] uppercase font-bold text-stone-500 block mb-1">Motivace B</span>
-                                <span class="font-display font-bold text-sm text-[#1A1A1A]">Chci najít svůj produkt či službu</span>
-                                <p class="text-stone-500 text-xs font-light leading-relaxed mt-1">
-                                    Vytvořit reálnou hmatatelnou hodnotu, která dává hluboký osobní smysl a má tržní potenciál.
+                            <div class="p-4 bg-stone-50 border border-[#E1DFDB] rounded-2xl">
+                                <span class="text-sm font-bold text-[#505E59] block mb-1">Motivace B</span>
+                                <span class="font-display font-bold text-sm text-[#093428]">Chci najít svůj produkt či službu</span>
+                                <p class="text-[#505E59] text-xs leading-relaxed mt-1">
+                                    Vytvořit reálnou hmatatelnou hodnotu, která dává hluboký osobní smysl a&nbsp;má tržní potenciál.
                                 </p>
                             </div>
                         </div>
 
-                        <div class="p-5 bg-[#1A1A1A] text-[#FAF9F6]">
-                            <span class="font-display font-extrabold text-[#5B5FE8] text-xs uppercase tracking-widest block">Built to Last</span>
-                            <p class="text-xs font-light leading-relaxed text-stone-300 mt-1">
-                                Pouze 1 z 7 startupů přežije dlouhodobě. Metodika VISIBLE7 MICEK™ dává lidem do ruky plán a pevnou oporu, aby vytrvali a rostli.
+                        <div class="p-5 bg-[#0F3E2E] text-[#F4F3F0]">
+                            <span class="font-display font-extrabold text-[#C6F05C] text-sm block">Built to Last</span>
+                            <p class="text-xs leading-relaxed text-stone-300 mt-1">
+                                Pouze 1 z&nbsp;7 startupů přežije dlouhodobě. Metodika VISIBLE7 MICEK® dává lidem do ruky plán a&nbsp;pevnou oporu, aby vytrvali a&nbsp;rostli.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch mb-20 border-b border-stone-200/50 pb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch mb-20 border-b border-[#E1DFDB] pb-20">
                 <div class="lg:col-span-7 space-y-6">
-                    <h3 class="font-display font-bold text-2xl text-[#1A1A1A]">Hierarchie úspěchu: Růst nevzniká náhodou</h3>
-                    <p class="text-[#4A4A4A] text-sm font-light leading-relaxed">
-                        Skutečné dotažení děl a byznysu vyžaduje vnitřní strukturovanou práci v této nekompromisní posloupnosti – počínaje vymezením prostoru, ve kterém vůbec dává smysl o cestě uvažovat:
+                    <h3 class="font-display font-bold text-2xl text-[#093428]">Hierarchie úspěchu: Růst nevzniká náhodou</h3>
+                    <p class="text-[#505E59] text-sm leading-relaxed">
+                        Skutečné dotažení děl a&nbsp;byznysu vyžaduje vnitřní strukturovanou práci v&nbsp;této nekompromisní posloupnosti – počínaje vymezením prostoru, ve kterém vůbec dává smysl o&nbsp;cestě uvažovat:
                     </p>
 
                     <div class="space-y-4">
-                        <div class="p-4 border border-stone-200">
-                            <h4 class="font-display font-bold text-sm tracking-widest text-[#1A1A1A] flex items-center gap-3">
-                                <span class="w-6 h-6 flex items-center justify-center font-mono font-bold text-xs bg-stone-200 text-stone-800">0</span>
-                                VELKÝ TŘESK — vymezení prostoru pro myšlení
+                        <div class="p-4 border border-[#E1DFDB] rounded-2xl">
+                            <h4 class="font-display font-bold text-sm text-[#093428] flex items-center gap-3">
+                                <span class="w-6 h-6 flex items-center justify-center font-bold text-xs bg-stone-200 text-stone-800">0</span>
+                                VELKÝ TŘESK – vymezení prostoru pro myšlení
                             </h4>
-                            <p class="text-xs text-stone-600 font-light pl-9 mt-2 leading-relaxed">
-                                Stejně jako dům nelze postavit bez pozemku, ani víru, vizi nebo strategii nelze stavět bez rámce, do kterého je vložíš. Dřív, než cokoli z dalších kroků dává smysl, je třeba si vědomě vymezit prostor – jak velké hřiště si pro svůj projekt dovolíš.
+                            <p class="text-xs text-[#505E59] pl-9 mt-2 leading-relaxed">
+                                Stejně jako dům nelze postavit bez pozemku, ani víru, vizi nebo strategii nelze stavět bez rámce, do kterého je vložíš. Dřív, než cokoli z&nbsp;dalších kroků dává smysl, je třeba si vědomě vymezit prostor – jak velké hřiště si pro svůj projekt dovolíš.
                             </p>
                         </div>
-                        <div class="p-4 border border-[#5B5FE8] bg-indigo-50/10">
-                            <h4 class="font-display font-bold text-sm tracking-widest text-[#1A1A1A] flex items-center gap-3">
-                                <span class="w-6 h-6 flex items-center justify-center font-mono font-bold text-xs bg-[#5B5FE8] text-white">1</span>
-                                VÍRA — pevný bod jsi ty
+                        <div class="p-4 border border-[#34845A] bg-[#F1F7F2] rounded-2xl">
+                            <h4 class="font-display font-bold text-sm text-[#093428] flex items-center gap-3">
+                                <span class="w-6 h-6 flex items-center justify-center font-bold text-xs bg-[#0F3E2E] text-white">1</span>
+                                VÍRA – pevný bod jsi ty
                             </h4>
-                            <p class="text-xs text-stone-600 font-light pl-9 mt-2 leading-relaxed">
-                                Pevný bod jsi ty sám. Není to tvůj zaměstnavatel, není to trh. Jsi to ty a tvé pevné ukotvení!!!
+                            <p class="text-xs text-[#505E59] pl-9 mt-2 leading-relaxed">
+                                Pevný bod jsi ty sám. Není to tvůj zaměstnavatel, není to trh. Jsi to ty a&nbsp;tvé pevné ukotvení!!!
                             </p>
                         </div>
-                        <div class="p-4 border border-stone-200">
-                            <h4 class="font-display font-bold text-sm tracking-widest text-[#1A1A1A] flex items-center gap-3">
-                                <span class="w-6 h-6 flex items-center justify-center font-mono font-bold text-xs bg-stone-200 text-stone-800">2</span>
-                                VIZE — jak má vypadat výsledek
+                        <div class="p-4 border border-[#E1DFDB] rounded-2xl">
+                            <h4 class="font-display font-bold text-sm text-[#093428] flex items-center gap-3">
+                                <span class="w-6 h-6 flex items-center justify-center font-bold text-xs bg-stone-200 text-stone-800">2</span>
+                                VIZE – jak má vypadat výsledek
                             </h4>
-                            <p class="text-xs text-stone-600 font-light pl-9 mt-2 leading-relaxed">
-                                Jasná, ucelená a hmatatelná představa o dotaženém úspěšném řešení.
+                            <p class="text-xs text-[#505E59] pl-9 mt-2 leading-relaxed">
+                                Jasná, ucelená a&nbsp;hmatatelná představa o&nbsp;dotaženém úspěšném řešení.
                             </p>
                         </div>
-                        <div class="p-4 border border-stone-200">
-                            <h4 class="font-display font-bold text-sm tracking-widest text-[#1A1A1A] flex items-center gap-3">
-                                <span class="w-6 h-6 flex items-center justify-center font-mono font-bold text-xs bg-stone-200 text-stone-800">3</span>
-                                STRATEGIE — jak se k němu dostat
+                        <div class="p-4 border border-[#E1DFDB] rounded-2xl">
+                            <h4 class="font-display font-bold text-sm text-[#093428] flex items-center gap-3">
+                                <span class="w-6 h-6 flex items-center justify-center font-bold text-xs bg-stone-200 text-stone-800">3</span>
+                                STRATEGIE – jak se k&nbsp;němu dostat
                             </h4>
                         </div>
-                        <div class="p-4 border border-stone-200">
-                            <h4 class="font-display font-bold text-sm tracking-widest text-[#1A1A1A] flex items-center gap-3">
-                                <span class="w-6 h-6 flex items-center justify-center font-mono font-bold text-xs bg-stone-200 text-stone-800">4</span>
-                                CÍLE — co musíme splnit
+                        <div class="p-4 border border-[#E1DFDB] rounded-2xl">
+                            <h4 class="font-display font-bold text-sm text-[#093428] flex items-center gap-3">
+                                <span class="w-6 h-6 flex items-center justify-center font-bold text-xs bg-stone-200 text-stone-800">4</span>
+                                CÍLE – co musíme splnit
                             </h4>
                         </div>
-                        <div class="p-4 border border-stone-200">
-                            <h4 class="font-display font-bold text-sm tracking-widest text-[#1A1A1A] flex items-center gap-3">
-                                <span class="w-6 h-6 flex items-center justify-center font-mono font-bold text-xs bg-stone-200 text-stone-800">5</span>
-                                PROSTŘEDKY — co k tomu potřebujeme
+                        <div class="p-4 border border-[#E1DFDB] rounded-2xl">
+                            <h4 class="font-display font-bold text-sm text-[#093428] flex items-center gap-3">
+                                <span class="w-6 h-6 flex items-center justify-center font-bold text-xs bg-stone-200 text-stone-800">5</span>
+                                PROSTŘEDKY – co k&nbsp;tomu potřebujeme
                             </h4>
                         </div>
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 bg-stone-50 border border-stone-200 flex flex-col justify-between p-8">
+                <div class="lg:col-span-5 bg-stone-50 border border-[#E1DFDB] flex flex-col justify-between p-8 rounded-2xl">
                     <div class="space-y-6">
-                        <span class="font-mono text-[9px] uppercase font-bold text-stone-400 block">VÍRA = Pevný bod</span>
-                        <div class="h-16 w-16 bg-[#1A1A1A] text-white flex items-center justify-center font-display font-black text-2xl border-2 border-[#5B5FE8]">MM</div>
-                        <h4 class="font-display font-bold text-xl text-[#1A1A1A]">„Pevný bod jsi TY. Není to tvůj zaměstnavatel. Jsi to ty!!!“</h4>
-                        <p class="text-stone-500 font-light text-xs leading-relaxed">
-                            Bez vnitřního přesvědčení a pevného ukotvení v tom, že jste tvůrcem své cesty, zaniká jakákoli sebelépe vymyšlená strategie při prvním zakolísání trhu.
+                        <span class="text-sm font-bold text-[#505E59] block">VÍRA = Pevný bod</span>
+                        <div class="h-16 w-16 rounded-2xl bg-[#0F3E2E] text-[#C6F05C] flex items-center justify-center font-black text-2xl">MM</div>
+                        <h4 class="font-display font-bold text-xl text-[#093428]">„Pevný bod jsi TY. Není to tvůj zaměstnavatel. Jsi to ty!!!“</h4>
+                        <p class="text-[#505E59] text-xs leading-relaxed">
+                            Bez vnitřního přesvědčení a&nbsp;pevného ukotvení v&nbsp;tom, že jste tvůrcem své cesty, zaniká jakákoli sebelépe vymyšlená strategie při prvním zakolísání trhu.
                         </p>
                     </div>
                 </div>
@@ -1072,72 +1076,73 @@
 
             <div class="space-y-10">
                 <div class="text-center">
-                    <span class="font-mono text-[11px] uppercase tracking-widest text-[#5B5FE8] font-bold block mb-1">Struktura metodiky</span>
-                    <h3 class="font-display font-bold text-2xl text-[#1A1A1A]">Struktura metodiky VISIBLE7</h3>
+                    <span class="text-sm text-[#0F3E2E] font-bold block mb-1">Struktura metodiky</span>
+                    <h3 class="font-display font-bold text-2xl text-[#093428]">Sedm bran metodiky VISIBLE7</h3>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white border border-stone-200 p-6 space-y-3">
-                        <h4 class="font-display font-bold text-base text-[#1A1A1A]">Vision</h4>
-                        <p class="text-stone-600 text-xs sm:text-sm font-light leading-relaxed">
-                            Fáze Vision je počátečním bodem metodiky VISIBLE7. Účastník si v této fázi ujasňuje svou osobní i podnikatelskou vizi. Jedná se o období prvotního přehodnocení dosavadní cesty, kdy se objevuje tzv. „disorienting dilemma“ popsané Mezirowem. Účastníci často přicházejí s více nápady a nejsou si jisti, který z nich má největší potenciál. Proto byla vytvořena rozhodovací matice, která umožňuje srovnat jednotlivé projekty podle klíčových kritérií. Dále jsou v této fázi využívány nástroje jako Blue Ocean Strategy, SWOT analýza nebo Ansoffova matice.
+                    <div class="bg-white border border-[#E1DFDB] p-6 space-y-3 rounded-2xl">
+                        <h4 class="font-display font-bold text-base text-[#093428]"><span class="text-[#34845A]">V</span> · Vize</h4>
+                        <p class="text-[#505E59] text-xs sm:text-sm leading-relaxed">
+                            Brána Vize je počátečním bodem metodiky VISIBLE7. Účastník si v&nbsp;této fázi ujasňuje svou osobní i&nbsp;podnikatelskou vizi. Jedná se o&nbsp;období prvotního přehodnocení dosavadní cesty, kdy se objevuje tzv. „disorienting dilemma“ popsané Mezirowem. Účastníci často přicházejí s&nbsp;více nápady a&nbsp;nejsou si jisti, který z&nbsp;nich má největší potenciál. Proto byla vytvořena rozhodovací matice, která umožňuje srovnat jednotlivé projekty podle klíčových kritérií. Dále jsou v&nbsp;této fázi využívány nástroje jako Strategie modrého oceánu (Blue Ocean), model Hooked, SWOT analýza nebo Ansoffova matice.
                         </p>
                     </div>
 
-                    <div class="bg-white border border-stone-200 p-6 space-y-3">
-                        <h4 class="font-display font-bold text-base text-[#1A1A1A]">Ideation</h4>
-                        <p class="text-stone-600 text-xs sm:text-sm font-light leading-relaxed">
-                            Ve fázi Ideation dochází ke konkrétnímu rozpracování vybrané vize. Účastník definuje svůj produkt nebo službu pomocí nástrojů jako Lean Canvas nebo Business Model Canvas. Dochází k analýze cílové skupiny, hodnotové nabídky, distribučních kanálů i monetizační strategie. Tato fáze odpovídá fázi abstraktní konceptualizace dle Kolba a umožňuje přejít od obecné myšlenky k jasně strukturovanému návrhu.
+                    <div class="bg-white border border-[#E1DFDB] p-6 space-y-3 rounded-2xl">
+                        <h4 class="font-display font-bold text-base text-[#093428]"><span class="text-[#34845A]">I</span> · Ideace</h4>
+                        <p class="text-[#505E59] text-xs sm:text-sm leading-relaxed">
+                            V&nbsp;bráně Ideace dochází ke konkrétnímu rozpracování vybrané vize. Účastník definuje svůj produkt nebo službu pomocí nástrojů jako Lean Canvas nebo Business Model Canvas. Dochází k&nbsp;analýze cílové skupiny, hodnotové nabídky, distribučních kanálů i&nbsp;monetizační strategie. Tato fáze odpovídá fázi abstraktní konceptualizace dle Kolba a&nbsp;umožňuje přejít od obecné myšlenky k&nbsp;jasně strukturovanému návrhu.
                         </p>
                     </div>
 
-                    <div class="bg-white border border-stone-200 p-6 space-y-3">
-                        <h4 class="font-display font-bold text-base text-[#1A1A1A]">Strategy and Business Case</h4>
-                        <p class="text-stone-600 text-xs sm:text-sm font-light leading-relaxed">
-                            Tato fáze se věnuje ekonomickému zhodnocení projektu. V tabulkovém procesoru účastník počítá rozpočet, plánuje příjmy a výdaje, stanovuje bod zvratu, vypočítává návratnost investice (ROI) a analyzuje profitabilitu v čase. Jde o dovednost, kterou většina účastníků předtím v praxi nezažila. Finanční modelování přispívá k větší důvěře v rozhodování a reálný odhad podnikatelského potenciálu.
+                    <div class="bg-white border border-[#E1DFDB] p-6 space-y-3 rounded-2xl">
+                        <h4 class="font-display font-bold text-base text-[#093428]"><span class="text-[#34845A]">S</span> · Strategie a&nbsp;čísla</h4>
+                        <p class="text-[#505E59] text-xs sm:text-sm leading-relaxed">
+                            Tato fáze se věnuje ekonomickému zhodnocení projektu. V&nbsp;tabulkovém procesoru účastník počítá rozpočet, plánuje příjmy a&nbsp;výdaje, stanovuje bod zvratu, vypočítává návratnost investice (ROI) a&nbsp;analyzuje profitabilitu v&nbsp;čase. Jde o&nbsp;dovednost, kterou většina účastníků předtím v&nbsp;praxi nezažila. Finanční modelování přispívá k&nbsp;větší důvěře v&nbsp;rozhodování a&nbsp;reálný odhad podnikatelského potenciálu.
                         </p>
                     </div>
 
-                    <div class="bg-white border border-stone-200 p-6 space-y-3">
-                        <h4 class="font-display font-bold text-base text-[#1A1A1A]">Implementation and Development</h4>
-                        <p class="text-stone-600 text-xs sm:text-sm font-light leading-relaxed">
-                            Zde účastník realizuje svůj projekt technicky. Pomocí nástroje WordPress nebo jiných platforem vytváří funkční verzi svého projektu. Autor metodiky vydefinoval 12 podnikatelských modelů, které jsou v této fázi použitelné: Web, Web + E-shop, Konverzní web 1-2-3, E-shop, Blog, Affiliate, Dropshipping, Squeeze page (lead generation), LMS, Members, Oboustranné tržiště a Fórum. Pro každý model byla vytvořena tabulka doporučených pluginů. Tato fáze odpovídá aktivnímu experimentování a pomáhá upevnit technické i podnikatelské dovednosti.
+                    <div class="bg-white border border-[#E1DFDB] p-6 space-y-3 rounded-2xl">
+                        <h4 class="font-display font-bold text-base text-[#093428]"><span class="text-[#34845A]">I</span> · Implementace</h4>
+                        <p class="text-[#505E59] text-xs sm:text-sm leading-relaxed">
+                            Zde účastník realizuje svůj projekt technicky. Pomocí nástroje WordPress nebo jiných platforem vytváří funkční verzi svého projektu. Autor metodiky vydefinoval 12+1 modelů byznysu, které jsou v&nbsp;této bráně použitelné, mimo jiné: Web, Web + E-shop, Konverzní web 1-2-3, E-shop, Blog, Affiliate, Dropshipping, Squeeze page (lead generation), LMS, Members, Oboustranné tržiště a&nbsp;Fórum. Pro každý model byla vytvořena tabulka doporučených pluginů. Tato fáze odpovídá aktivnímu experimentování a&nbsp;pomáhá upevnit technické i&nbsp;podnikatelské dovednosti.
                         </p>
                     </div>
 
-                    <div class="bg-white border border-stone-200 p-6 space-y-3">
-                        <h4 class="font-display font-bold text-base text-[#1A1A1A]">Benchmarking and Testing</h4>
-                        <p class="text-stone-600 text-xs sm:text-sm font-light leading-relaxed">
-                            V této fázi účastník testuje produkt na uživatelských datech, analyzuje odezvu a porovnává ji s konkurencí. Pracuje s nástroji jako Google Analytics, Hotjar nebo Facebook Pixel. Učí se základy A/B testování a optimalizace. Cílem je získat reálnou zpětnou vazbu a upravit návrh dle dat. Tato fáze je klíčová pro rozhodování o budoucím směru a životaschopnosti řešení.
+                    <div class="bg-white border border-[#E1DFDB] p-6 space-y-3 rounded-2xl">
+                        <h4 class="font-display font-bold text-base text-[#093428]"><span class="text-[#34845A]">B</span> · Budování poptávky</h4>
+                        <p class="text-[#505E59] text-xs sm:text-sm leading-relaxed">
+                            V&nbsp;této bráně účastník buduje poptávku: vybírá marketingové kanály podle toho, kde jeho zákazník opravdu nakupuje, testuje je s&nbsp;malým rozpočtem a&nbsp;porovnává výsledky s&nbsp;konkurencí. Pracuje s&nbsp;nástroji jako Google Analytics, Hotjar nebo Meta Pixel. Učí se základy A/B testování a&nbsp;optimalizace. Cílem je získat reálnou zpětnou vazbu a&nbsp;upravit návrh dle dat. Tato fáze je klíčová pro rozhodování o&nbsp;budoucím směru a&nbsp;životaschopnosti řešení.
                         </p>
                     </div>
 
-                    <div class="bg-[#1A1A1A] text-white p-6 space-y-3">
-                        <h4 class="font-display font-bold text-base text-[#5B5FE8]">Launch</h4>
-                        <p class="text-stone-300 text-xs sm:text-sm font-light leading-relaxed">
-                            Fáze Launch je zaměřena na nastavení milníků MVP a uvedení projektu do života. Účastník pracuje svépomocí a projekt stále spravuje bez externího týmu. Součástí je validace funkčnosti a reakce trhu. V této fázi se hodnotí i potenciální ztráty – účastník přemýšlí o rizicích, nikoliv pouze o zisku. Dochází k prvnímu veřejnému testu, komunikaci se zákazníky a sběru zpětné vazby pro další vývoj.
+                    <div class="bg-[#0F3E2E] text-white p-6 space-y-3">
+                        <h4 class="font-display font-bold text-base text-[#C6F05C]">L · Launch</h4>
+                        <p class="text-stone-300 text-xs sm:text-sm leading-relaxed">
+                            Brána Launch je zaměřena na nastavení milníků MVP a&nbsp;uvedení projektu do života. Účastník pracuje svépomocí a&nbsp;projekt stále spravuje bez externího týmu. Součástí je validace funkčnosti a&nbsp;reakce trhu. V&nbsp;této fázi se hodnotí i&nbsp;potenciální ztráty – účastník přemýšlí o&nbsp;rizicích, nikoliv pouze o&nbsp;zisku. Dochází k&nbsp;prvnímu veřejnému testu, komunikaci se zákazníky a&nbsp;sběru zpětné vazby pro další vývoj.
                         </p>
                     </div>
 
-                    <div class="col-span-1 md:col-span-2 bg-[#1A1A1A] text-white p-8 border border-[#5B5FE8]/35">
-                        <h4 class="font-display font-bold text-lg text-white">Expansion</h4>
-                        <p class="text-stone-300 text-xs sm:text-sm font-light leading-relaxed mt-2">
-                            V závěrečné fázi se řeší otázky růstu, jako je nábor zaměstnanců, automatizace procesů, investice do rozšíření a expanze na nové trhy. Účastník analyzuje, kdy se vyplatí přejít od individuální práce ke škálovanému systému. Dochází k proměně role podnikatele – z tvůrce produktu na lídra týmu a manažera. Tato fáze klade důraz na strategické myšlení, alokaci zdrojů a dlouhodobou udržitelnost.
+                    <div class="col-span-1 md:col-span-2 bg-[#0F3E2E] text-white p-8 border border-white/10 rounded-2xl">
+                        <h4 class="font-display font-bold text-lg text-[#C6F05C]">E · Expanze</h4>
+                        <p class="text-stone-300 text-xs sm:text-sm leading-relaxed mt-2">
+                            V&nbsp;závěrečné bráně se řeší otázky růstu, jako je nábor zaměstnanců, automatizace procesů, investice do rozšíření a&nbsp;expanze na nové trhy. Účastník analyzuje, kdy se vyplatí přejít od individuální práce ke škálovanému systému. Dochází k&nbsp;proměně role podnikatele – z&nbsp;tvůrce produktu na lídra týmu a&nbsp;manažera. Tato fáze klade důraz na strategické myšlení, alokaci zdrojů a&nbsp;dlouhodobou udržitelnost.
                         </p>
                     </div>
                 </div>
 
-                <!-- Collaborative technology partner -->
-                <div class="bg-[#1A1A1A] text-white p-8 border border-stone-800 mt-12 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-                    <div class="lg:col-span-9 space-y-2">
-                        <h4 class="font-display font-bold text-lg text-[#5B5FE8]">Spolupráce s technologickou společností VIVERRA</h4>
-                        <p class="text-stone-300 text-xs font-light leading-relaxed">
-                            Abychom vám na vaší cestě za reálným online byznysem nabídli to nejlepší, úzce spolupracujeme s inovativní technologickou společností <strong>VIVERRA</strong>, která vyvíjí špičkovou vlastní verzi umělé inteligence. Díky tomuto unikátnímu napojení získáte okamžitý přístup k nejmodernějším nástrojům, které zásadně zrychlují a zpřesňují vaše rozhodování v reálném čase.
-                        </p>
-                    </div>
-                    <div class="lg:col-span-3 text-center border-l border-stone-800 pl-4">
-                        <p class="font-mono text-[10px] uppercase text-stone-500">Powering Platform</p>
-                        <p class="font-display font-extrabold text-white text-lg tracking-widest uppercase">VIVERRA AI</p>
+                <!-- Technologičtí partneři -->
+                <div class="mt-12 rounded-2xl border border-[#E1DFDB] bg-white p-6 sm:p-8">
+                    <p class="text-sm font-semibold text-[#34845A]">Partneři aplikace VISIBLE7</p>
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <a href="https://viverra.ai" target="_blank" rel="noopener" class="text-lg font-extrabold text-[#093428] hover:underline underline-offset-4">VIVERRA ↗</a>
+                            <p class="mt-1 text-sm text-[#505E59] leading-relaxed">Partner pro umělou inteligenci. Česká technologická společnost, která vyvíjí vlastní AI řešení.</p>
+                        </div>
+                        <div>
+                            <a href="https://goodveri.com" target="_blank" rel="noopener" class="text-lg font-extrabold text-[#093428] hover:underline underline-offset-4">Goodveri ↗</a>
+                            <p class="mt-1 text-sm text-[#505E59] leading-relaxed">Technologický partner pro napojení podnikatelského účtu (PSD2). Připravujeme s&nbsp;ním výuku na vašich vlastních číslech.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1150,130 +1155,101 @@
     <!-- Side Drawer Sidebar -->
     <div id="v7-sidebar">
         <button onclick="closeV7Side()" class="v7-sidebar-close">✕</button>
-        <span class="inline-block px-3 py-1 bg-[#5B5FE8]/10 text-[#5B5FE8] border border-[#5B5FE8]/25 font-bold font-mono text-[10px] uppercase tracking-widest rounded-none mb-4">
-            V7 Framework Detail
+        <span class="inline-block px-3 py-1 bg-[#C6F05C]/15 text-[#C6F05C] border border-[#C6F05C]/30 font-bold text-xs rounded-full mb-4">
+            Detail mapy VISIBLE7
         </span>
-        <h2 id="v7-side-drawer-title" style="color: white !important;" class="font-display font-medium text-3xl sm:text-4xl leading-tight uppercase tracking-tight text-white mt-1">
+        <h2 id="v7-side-drawer-title" style="color: white !important;" class="font-display font-extrabold text-3xl sm:text-4xl leading-tight tracking-tight text-white mt-1">
             Název
         </h2>
-        <p id="v7-side-drawer-desc" class="text-stone-300 text-sm leading-relaxed font-light mt-6 mb-8">
+        <p id="v7-side-drawer-desc" class="text-stone-300 text-sm leading-relaxed mt-6 mb-8">
             Popis.
         </p>
-        <div class="bg-white/5 border border-white/10 p-5 rounded-none space-y-4">
-            <h4 class="font-display font-bold text-xs uppercase tracking-widest text-stone-400">
-                Checklist / Klíčové Body:
+        <div class="bg-white/5 border border-white/10 p-5 space-y-4 rounded-2xl">
+            <h4 class="font-display font-bold text-xs text-[#505E59]">
+                Checklist
             </h4>
             <ul id="v7-side-drawer-list" class="space-y-3.5">
                 <!-- Checklist items injected dynamically -->
             </ul>
         </div>
-        <div class="pt-8 border-t border-white/10 text-xs text-stone-500 font-mono tracking-wide mt-8">
-            <p>Klikněte kamkoli mimo pro zavření.</p>
+        <div class="pt-8 border-t border-white/10 text-xs text-[#505E59] tracking-wide mt-8">
+            <p>Zavřete kliknutím mimo panel nebo klávesou Esc.</p>
         </div>
     </div>
 
-    <!-- Next Step: AIID Connection -->
-    <section id="zacni-podnikat" class="py-24 bg-[#1A1A1A] text-white px-6 md:px-12 border-b border-stone-800 relative overflow-hidden">
-        <div class="absolute -right-32 -top-32 w-[400px] h-[400px] rounded-full border border-[#5B5FE8] opacity-[0.04] pointer-events-none"></div>
-        <div class="absolute -left-20 -bottom-20 w-[300px] h-[300px] rounded-full border border-[#5B5FE8] opacity-[0.04] pointer-events-none"></div>
-
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <div class="flex justify-center mb-4">
-                <span class="font-mono text-[11px] uppercase tracking-[0.25em] bg-white/5 text-[#5B5FE8] px-4 py-1.5 rounded-none font-bold border border-[#5B5FE8]/30">
-                    Chceš začít podnikat podle VISIBLE7?
-                </span>
-            </div>
-
-            <h2 class="font-display font-medium text-3xl sm:text-4xl tracking-tight text-white mb-6">
-                První krok je <span class="font-black text-[#5B5FE8]">vidět online</span>
+    <!-- Další krok: aplikace -->
+    <section id="zacni-podnikat" class="py-20 bg-[#F4F3F0] text-[#093428] px-4 sm:px-8 md:px-12 border-t border-[#E1DFDB]">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
+                Máte nápad na podnikání?<br><span class="text-[#34845A]">Začněte tím, že ho ověříte.</span>
             </h2>
-
-            <p class="text-stone-300 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto mb-10">
-                Než se pustíš do strategie, validace nebo prvních zákazníků, potřebuješ jedno základní – vlastní místo na internetu, kde tě lidé najdou. Vytvoř si zdarma svůj AI-first profil přes <strong class="text-white">AIID</strong> a my se ti ozveme s dalšími kroky podle metodiky VISIBLE7.
+            <p class="mt-5 text-lg leading-relaxed text-[#505E59]">
+                První bránu projdete v&nbsp;aplikaci VISIBLE7 zdarma. Zjistíte, jestli o&nbsp;nápad někdo stojí a&nbsp;jestli se ho vyplatí rozvíjet.
             </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://aiid.cz/?zdroj=visible7" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-5 bg-[#5B5FE8] text-white hover:bg-[#4347C4] transition-colors font-bold text-xs uppercase tracking-widest rounded-none text-center">
-                    Vytvořit si profil zdarma
-                    <span class="font-mono">↗</span>
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://visible7.io/?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=zaver" class="v7-trap-btn inline-flex h-14 w-full sm:w-auto items-center justify-center pl-7 text-base font-bold text-[#0F3E2E]">
+                    Otestovat nápad zdarma
                 </a>
-                <span class="text-stone-500 text-xs font-mono uppercase tracking-widest">5 minut · zdarma · žádná karta</span>
             </div>
+            <p class="mt-3 text-sm text-[#505E59]">Pro registraci stačí e-mail. Platební kartu nezadáváte.</p>
         </div>
     </section>
 
     <!-- Partnership & Training Program Callout -->
-    <section class="py-16 bg-[#F9F8F6] border-t border-b border-stone-200">
+    <section class="py-16 bg-[#F4F3F0] border-t border-b border-[#E1DFDB]">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <p class="font-mono text-[10px] text-stone-500 uppercase tracking-widest font-bold mb-3">
-                Spolupráce & Školení
+            <p class="text-sm text-[#505E59] font-bold mb-3">
+                Spolupráce a&nbsp;školení
             </p>
-            <h4 class="font-display font-medium text-xl text-[#1A1A1A] mb-3">
+            <h4 class="font-display font-medium text-xl text-[#093428] mb-3">
                 Zaujala vás metodika VISIBLE7 pro váš projekt nebo firmu?
             </h4>
-            <p class="text-stone-600 text-sm font-light max-w-2xl mx-auto leading-relaxed">
-                Kompletní realizaci, workshopy, firemní vzdělávání a profesionální rozvojové projekty této metodiky zastřešuje a realizuje společnost
-                <a href="https://edu-partners.cz/" target="_blank" class="font-bold text-[#5B5FE8] hover:underline whitespace-nowrap">
+            <p class="text-[#505E59] text-sm max-w-2xl mx-auto leading-relaxed">
+                Kompletní realizaci, workshopy, firemní vzdělávání a&nbsp;profesionální rozvojové projekty této metodiky zastřešuje a&nbsp;realizuje společnost
+                <a href="https://edu-partners.cz/" target="_blank" class="font-bold text-[#0F3E2E] hover:underline whitespace-nowrap">
                     edu-partners.cz ↗
                 </a>.
             </p>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#1A1A1A] text-stone-400 py-16 px-6 font-display border-t border-stone-850">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-10">
-                <h4 class="font-mono text-[11px] uppercase tracking-[0.25em] text-stone-500 font-bold mb-5 text-center md:text-left">
-                    Podnikatelský & vzdělávací ekosystém
-                </h4>
-                <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-                    <a href="https://aiid.cz/?zdroj=visible7" target="_blank" class="inline-flex items-center gap-2 bg-[#5B5FE8] text-white hover:bg-white hover:text-[#1A1A1A] transition-colors px-5 py-3 text-xs font-bold uppercase tracking-widest rounded-none">
-                        AIID <span class="font-mono opacity-70">↗</span>
-                    </a>
-                    <a href="https://visible7.io" target="_blank" class="inline-flex items-center gap-2 bg-[#5B5FE8] text-white hover:bg-white hover:text-[#1A1A1A] transition-colors px-5 py-3 text-xs font-bold uppercase tracking-widest rounded-none">
-                        VISIBLE7 App (Beta) <span class="font-mono opacity-70">↗</span>
-                    </a>
-                    <a href="https://edu-partners.cz" target="_blank" class="inline-flex items-center gap-2 bg-[#5B5FE8] text-white hover:bg-white hover:text-[#1A1A1A] transition-colors px-5 py-3 text-xs font-bold uppercase tracking-widest rounded-none">
-                        Edu Partners <span class="font-mono opacity-70">↗</span>
-                    </a>
-                    <a href="https://www.edupartners.cz" target="_blank" class="inline-flex items-center gap-2 bg-[#5B5FE8] text-white hover:bg-white hover:text-[#1A1A1A] transition-colors px-5 py-3 text-xs font-bold uppercase tracking-widest rounded-none">
-                        Edu Partners E-learning <span class="font-mono opacity-70">↗</span>
-                    </a>
-                    <a href="https://michalmicek.cz" target="_blank" class="inline-flex items-center gap-2 bg-[#5B5FE8] text-white hover:bg-white hover:text-[#1A1A1A] transition-colors px-5 py-3 text-xs font-bold uppercase tracking-widest rounded-none">
-                        Michal Míček <span class="font-mono opacity-70">↗</span>
-                    </a>
-                    <a href="https://viverra.ai" target="_blank" class="inline-flex items-center gap-2 bg-[#5B5FE8] text-white hover:bg-white hover:text-[#1A1A1A] transition-colors px-5 py-3 text-xs font-bold uppercase tracking-widest rounded-none">
-                        VIVERRA AI <span class="font-mono opacity-70">↗</span>
-                    </a>
+    <!-- Patička -->
+    <footer class="bg-[#0F3E2E] text-white/70 py-14 px-4 sm:px-8">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:justify-between gap-10">
+            <div>
+                <div class="flex items-center gap-2.5">
+                    <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#C6F05C] text-sm font-bold text-[#0F3E2E]">V7</span>
+                    <span class="font-bold tracking-tight text-white">VISIBLE7 <span class="font-normal text-white/60">MICEK®</span></span>
                 </div>
+                <p class="mt-3 max-w-xs text-sm">Objevování nápadů. Dotažení v&nbsp;exekuci. Bez chaosu.</p>
             </div>
-
-            <div class="h-px bg-stone-800 mb-8"></div>
-
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="text-center md:text-left">
-                    <p class="text-white font-display font-bold tracking-widest uppercase text-sm">VISIBLE7 <span class="font-bold text-[#5B5FE8]">MICEK®</span></p>
-                    <p class="text-xs text-stone-500 mt-1.5 font-light">Objevování nápadů. Dotažení v exekuci. Bez chaosu.</p>
-                </div>
-                <div class="text-xs text-stone-500 font-mono tracking-wider">
-                    © 2026 MICHAL MIČEK. Všechna práva vyhrazena.
-                </div>
+            <div>
+                <p class="text-sm font-semibold text-white">Podnikatelský a&nbsp;vzdělávací ekosystém</p>
+                <ul class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
+                    <li><a href="https://visible7.io" target="_blank" rel="noopener" class="hover:text-white">Aplikace VISIBLE7 ↗</a></li>
+                    <li><a href="https://edu-partners.cz" target="_blank" rel="noopener" class="hover:text-white">Edu Partners ↗</a></li>
+                    <li><a href="https://www.edupartners.cz" target="_blank" rel="noopener" class="hover:text-white">E-learning Edu Partners ↗</a></li>
+                    <li><a href="https://michalmicek.cz" target="_blank" rel="noopener" class="hover:text-white">Michal Míček ↗</a></li>
+                    <li><a href="https://aiid.cz/?zdroj=visible7" target="_blank" rel="noopener" class="hover:text-white">AIID ↗</a></li>
+                    <li><a href="https://viverra.ai" target="_blank" rel="noopener" class="hover:text-white">VIVERRA ↗</a></li>
+                    <li><a href="https://goodveri.com" target="_blank" rel="noopener" class="hover:text-white">Goodveri ↗</a></li>
+                </ul>
             </div>
         </div>
+        <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-white/15 text-sm">© 2026 Michal Míček · VISIBLE7 MICEK® – všechna práva vyhrazena</div>
     </footer>
 
     <!-- Tab Activation Script -->
     <script>
         // V7 Framework Data
         const v7FullContent = {
-            'Vision': { d: 'Tvoje vize a směr. Co chceš změnit a proč?', c: ['Máš definovaný klíčový problém?', 'Vize srozumitelná v jedné větě?', 'Byznys za 3 roky'] },
-            'Ideation': { d: 'Hledání cesty k řešení a validace nápadu.', c: ['Hloubkové rozhovory se zákazníky', 'Definice Unfair Advantage', 'Prvotní návrh řešení'] },
-            'Strategy': { d: 'Jak to celé ekonomicky poskládat do funkčního schématu.', c: ['Vyplněný Lean Canvas', 'Analýza přímé konkurence', 'Nastavení cenotvorby a marží'] },
-            'Build': { d: 'Tvorba samotného produktu či služby v minimalistické verzi.', c: ['Výběr jednoduché technologie', 'Design zaměřený na UX', 'Nastavení měření a sběru dat'] },
-            'Test': { d: 'Zpětná vazba od reálného trhu a měření prvních výsledků.', c: ['Spuštění A/B testů', 'KPI tracking klíčových metrik', 'Sběr kvalitativního feedbacku'] },
-            'Launch': { d: 'Ostrý start prodeje s plným nasazením.', c: ['GTM (Go-To-Market) Strategie', 'Spuštění hlavních kampaní', 'Nastavení zákaznické podpory'] },
-            'Expand': { d: 'Zvětšování měřítka, zisku a podílu na trhu.', c: ['Pokročilá automatizace', 'Budování stabilního týmu', 'Vstup na nové tržní segmenty'] },
+            'Vision': { t: 'Vize', d: 'Najdete místo mezi levnou a prémiovou konkurencí. Co chcete změnit a proč?', c: ['Strategie modrého oceánu (matice ERRC)', 'Křivka hodnoty proti levné i prémiové konkurenci', 'USP v jedné větě'] },
+            'Ideation': { t: 'Ideace', d: 'Celý byznys na jedné stránce.', c: ['Vyplněný Lean Canvas', 'Typ byznysu (12+1 modelů)', 'Hloubkové rozhovory se zákazníky'] },
+            'Strategy': { t: 'Strategie a čísla', d: 'Příjmy, náklady a marketing na 24 měsíců.', c: ['Potřebný kapitál', 'Bod zvratu a ROI', 'PNO podle typu byznysu'] },
+            'Build': { t: 'Implementace', d: 'Postup a nástroje pro váš typ byznysu: web, e-shop, kurz, předplatné…', c: ['Výběr z 12+1 modelů byznysu', 'Doporučené nástroje a pluginy', 'Nastavení měření a sběru dat'] },
+            'Test': { t: 'Budování poptávky', d: 'Kanály seřazené podle toho, kde váš zákazník opravdu nakupuje.', c: ['Výběr marketingových kanálů', 'Testovací rozpočet a A/B testy', 'Měření klíčových ukazatelů v GA4'] },
+            'Launch': { t: 'Launch', d: 'Spustíte hotový základ, ne dokonalý projekt, a měříte, co funguje.', c: ['Milníky MVP', 'Živnost, datová schránka, účetnictví', 'Kolik si můžete dovolit ztratit'] },
+            'Expand': { t: 'Expanze', d: 'Když projekt běží: automatizace, tým a další trhy.', c: ['Pokročilá automatizace', 'Budování stabilního týmu', 'Vstup na nové tržní segmenty'] },
             'Think': { d: 'Strategické nastavení priorit před samotnou akcí.', c: ['Důkladný Risk Check', 'Udržení laserového soustředění', 'Jasná definice úspěchu'] },
             'Creation': { d: 'Hlavní proces koncepčního vývoje, iterací a testování designu.', c: ['Rychlé prototypování', 'Praktické iterace nápadu', 'Technologická realizace konceptu'] },
             'PoC': { d: 'Proof of Concept – jasný důkaz, že vybrané řešení technicky funguje.', c: ['Funkční demo', 'První uživatelský feedback', 'Technická validace hypotézy'] },
@@ -1303,7 +1279,7 @@
             const backdrop = document.getElementById('v7-backdrop');
             const data = v7FullContent[phase] || { d: 'Podrobnosti připravujeme...', c: ['Bod 1', 'Bod 2'] };
 
-            document.getElementById('v7-side-drawer-title').innerText = phase.replace(/([A-Z])/g, ' $1').trim();
+            document.getElementById('v7-side-drawer-title').innerText = data.t || phase.replace(/([A-Z])/g, ' $1').trim();
             document.getElementById('v7-side-drawer-desc').innerText = data.d;
 
             const list = document.getElementById('v7-side-drawer-list');
@@ -1311,10 +1287,10 @@
             data.c.forEach(item => {
                 list.innerHTML += `
                 <li class="flex items-start gap-3.5 text-sm">
-                    <span class="p-1 bg-[#5B5FE8]/10 text-[#5B5FE8] border border-[#5B5FE8]/30 shrink-0 mt-0.5 flex items-center justify-center">
+                    <span class="p-1 bg-[#C6F05C]/15 text-[#C6F05C] border border-[#C6F05C]/30 rounded shrink-0 mt-0.5 flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="stroke-[3]"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </span>
-                    <span class="text-stone-200 font-light leading-snug">${item}</span>
+                    <span class="text-stone-200 leading-snug">${item}</span>
                 </li>`;
             });
 
@@ -1333,10 +1309,10 @@
         
         // Node detail descriptions for Holistic graph
         const nodeDescriptions = {
-            'greenbee': '<strong>Uzlík 1 (GreenBee):</strong> Bezpečný rozjezd. Analýza reálného trhu, ujasnění priorit a překonání vnitřního chaosu.',
-            'jobboy': '<strong>Uzlík 2 (JobBoy):</strong> Bod osamostatnění. Zisk dovedností (E-shop, marketing, AI) a plynulý přechod z korporátu na volnou nohu.',
-            'venture': '<strong>Uzlík 3 (Venture):</strong> Bod monetizace. Stavba produktu, robustní ekonomická tabulka (ROI, marže) a testování uživatelské zpětné vazby.',
-            'chucknorris': '<strong>Uzlík 4 (Chuck Norris):</strong> Škálované impérium. Zpětná vazba, pokročilá automatizace rutin, delegování sil a vstup na mezinárodní trhy.'
+            'greenbee': '<strong>Bod 1 (GreenBee):</strong> Bezpečný rozjezd. Analýza reálného trhu, ujasnění priorit a&nbsp;překonání vnitřního chaosu.',
+            'jobboy': '<strong>Bod 2 (JobBoy):</strong> Bod osamostatnění. Zisk dovedností (E-shop, marketing, AI) a&nbsp;plynulý přechod z&nbsp;korporátu na volnou nohu.',
+            'venture': '<strong>Bod 3 (Venture):</strong> Bod monetizace. Stavba produktu, robustní ekonomická tabulka (ROI, marže) a&nbsp;testování uživatelské zpětné vazby.',
+            'chucknorris': '<strong>Bod 4 (Chuck Norris):</strong> Škálované impérium. Zpětná vazba, pokročilá automatizace rutin, delegování sil a vstup na mezinárodní trhy.'
         };
 
         function showNodeDetail(id) {
@@ -1344,10 +1320,10 @@
             if (container && nodeDescriptions[id]) {
                 container.innerHTML = nodeDescriptions[id];
                 // Revamp the container classes internally to show active highlight color
-                if (id === 'greenbee') container.className = "bg-teal-50 border border-teal-250 p-4 min-h-[50px] flex items-center justify-center text-xs text-center font-mono text-teal-800 font-semibold";
-                else if (id === 'jobboy') container.className = "bg-indigo-50 border border-indigo-250 p-4 min-h-[50px] flex items-center justify-center text-xs text-center font-mono text-indigo-800 font-semibold";
-                else if (id === 'venture') container.className = "bg-blue-50 border border-blue-250 p-4 min-h-[50px] flex items-center justify-center text-xs text-center font-mono text-blue-800 font-semibold";
-                else if (id === 'chucknorris') container.className = "bg-rose-50 border border-rose-250 p-4 min-h-[50px] flex items-center justify-center text-xs text-center font-mono text-rose-800 font-semibold";
+                if (id === 'greenbee') container.className = "rounded-2xl bg-[#F1F7F2] border border-[#C2DFCB] p-4 min-h-[50px] flex items-center justify-center text-sm text-center text-[#22603F]";
+                else if (id === 'jobboy') container.className = "rounded-2xl bg-[#F1F7F2] border border-[#C2DFCB] p-4 min-h-[50px] flex items-center justify-center text-sm text-center text-[#22603F]";
+                else if (id === 'venture') container.className = "rounded-2xl bg-[#F1F7F2] border border-[#C2DFCB] p-4 min-h-[50px] flex items-center justify-center text-sm text-center text-[#22603F]";
+                else if (id === 'chucknorris') container.className = "rounded-2xl bg-[#F1F7F2] border border-[#C2DFCB] p-4 min-h-[50px] flex items-center justify-center text-sm text-center text-[#22603F]";
             }
         }
 

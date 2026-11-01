@@ -1,16 +1,17 @@
 # VISIBLE7
 
-> VISIBLE7 (MICEK™) – sedmifázová metodika pro nastartování a rozvoj online byznysu, kterou vytvořil Michal Míček.
+> VISIBLE7 MICEK® – sedmifázová metodika pro nastartování a rozvoj online byznysu, kterou vytvořil Michal Míček.
 
 ## O metodice
 
-VISIBLE7 je ověřený 7krokový framework (Vision, Ideation, Strategy, Build, Test, Launch, Expand), který provází podnikatele celým procesem online podnikání – od prvního nápadu až po růst a expanzi. Součástí metodiky jsou rozhodovací a validační nástroje, 12 předpřipravených modelů online byznysu (e-shop, blog, LMS, affiliate web a další), praktické šablony a návody, a AI asistence pro tvorbu obsahu, struktury webu a klíčových rozhodnutí.
+VISIBLE7 je ověřený 7krokový framework (7 bran: Vize, Ideace, Strategie a čísla, Implementace, Budování poptávky, Launch, Expanze), který provází podnikatele celým procesem online podnikání – od prvního nápadu až po růst a expanzi. Součástí metodiky jsou rozhodovací a validační nástroje, 12+1 předpřipravených modelů online byznysu (e-shop, blog, LMS, affiliate web a další), praktické šablony a návody, a AI asistence pro tvorbu obsahu, struktury webu a klíčových rozhodnutí.
 
-Web: https://visible7.cz/
+Web: https://visible7.cz/ (popis metodiky)
+Aplikace: https://visible7.io/ (metodika v praxi: 438 krátkých video lekcí, finanční plán, AI asistenti a seniorní poradci)
 
 ## Zakladatel
 
-Michal Míček (Mgr., LL.M.) – český podnikatel a lektor, autor metodiky VISIBLE7 MICEK™. Zaměřuje se na "podnikatelský minimalismus" – budování byznysu s minimem zdrojů. Je také zakladatelem Edu Partners s.r.o. (akreditované vzdělávání dospělých) a tvůrcem platformy AIID.cz.
+Michal Míček (Mgr., LL.M.) – český podnikatel a lektor, autor metodiky VISIBLE7 MICEK®. Zaměřuje se na "podnikatelský minimalismus" – budování byznysu s minimem zdrojů. Je také zakladatelem Edu Partners s.r.o. (akreditované vzdělávání dospělých) a tvůrcem platformy AIID.cz.
 
 Osobní web: https://michalmicek.cz/
 
@@ -33,6 +34,7 @@ Osobní web: https://michalmicek.cz/
 
 - Edu Partners s.r.o. (vzdělávání dospělých): https://www.edu-partners.cz/
 - Osobní web Michala Míčka: https://michalmicek.cz/
+- Aplikace VISIBLE7: https://visible7.io/
 - AIID – AI tvorba webů: https://aiid.cz/
 
 ## Kontakt
