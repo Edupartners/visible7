@@ -125,8 +125,17 @@
             inset: 0;
             z-index: -1;
             background: var(--trap-bg, #C6F05C);
-            clip-path: polygon(0 0, 100% 0, calc(100% - 16px) 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, calc(100% - var(--s, 16px)) 100%, 0 100%);
             transition: filter .15s ease;
+        }
+        /* Zlatý řez (φ = 1,618): odsazení = písmo × φ, výška = písmo × φ² (na mřížce 4 px, min. 44 px), zkosení = výška ÷ φ² */
+        .v7-phi-sm { --s: 17px; height: 44px !important; font-size: 15px !important; padding: 0 calc(24px + 17px) 0 24px !important; }
+        .v7-phi-lg { --s: 18px; height: 48px !important; font-size: 18px !important; padding: 0 calc(29px + 18px) 0 29px !important; }
+        .v7-phi-out { height: 48px !important; font-size: 18px !important; padding: 0 29px !important; }
+        @media (min-width: 640px) {
+            .v7-phi-sm { --s: 17px; font-size: 16px !important; padding: 0 calc(26px + 17px) 0 26px !important; }
+            .v7-phi-lg { --s: 20px; height: 52px !important; font-size: 20px !important; padding: 0 calc(32px + 20px) 0 32px !important; }
+            .v7-phi-out { height: 52px !important; font-size: 20px !important; padding: 0 32px !important; }
         }
         .v7-trap-btn:hover::before { filter: brightness(0.94); }
         .v7-trap { clip-path: polygon(0 0, 100% 0, calc(100% - 28px) 100%, 0 100%); }
@@ -224,7 +233,7 @@
                 <a href="#proc-metodika" class="rounded-lg px-3 py-2 text-[15px] font-semibold text-[#505E59] hover:text-[#093428] transition-colors">Celostní přístup</a>
             </nav>
             <div>
-                <a href="https://visible7.io/?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=header" class="v7-trap-btn inline-flex h-10 items-center whitespace-nowrap pl-4 text-sm font-bold text-[#0F3E2E]">
+                <a href="https://visible7.io/?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=header" class="v7-trap-btn v7-phi-sm inline-flex h-10 items-center whitespace-nowrap pl-4 text-sm font-bold text-[#0F3E2E]">
                     Otestovat nápad<span class="hidden sm:inline">&nbsp;zdarma</span>
                 </a>
             </div>
@@ -246,10 +255,10 @@
                 Metodika vznikla z&nbsp;práce s&nbsp;více než 1&nbsp;000 lidmi v&nbsp;kurzech Edu&nbsp;Partners. Pomáhá najít správnou příležitost, zjednodušit byznys a&nbsp;dotáhnout nápad do konce. Podle principů podnikatelského minimalismu.
             </p>
             <div class="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:items-center">
-                <a href="#metodika" class="v7-trap-btn inline-flex h-14 items-center justify-center pl-7 text-base font-bold text-[#0F3E2E]">
+                <a href="#metodika" class="v7-trap-btn v7-phi-lg inline-flex h-14 items-center justify-center pl-7 text-base font-bold text-[#0F3E2E]">
                     Prozkoumat 7 bran
                 </a>
-                <a href="https://visible7.io/?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=hero" class="inline-flex h-14 items-center justify-center gap-2 border-2 border-[#0F3E2E] px-6 text-base font-semibold text-[#0F3E2E] transition-colors hover:bg-[#0F3E2E] hover:text-white">
+                <a href="https://visible7.io/?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=hero" class="v7-phi-out inline-flex h-14 items-center justify-center gap-2 border-2 border-[#0F3E2E] px-6 text-base font-semibold text-[#0F3E2E] transition-colors hover:bg-[#0F3E2E] hover:text-white">
                     Otestovat nápad zdarma ↗
                 </a>
             </div>
@@ -606,12 +615,12 @@
                     </div>
 
                     <div class="pt-2 flex flex-col sm:flex-row gap-4">
-                        <a href="https://michalmicek.cz" target="_blank" class="inline-flex items-center gap-2 font-display font-bold v7-trap-btn text-[#0F3E2E] font-bold px-6 py-4 text-xs">
+                        <a href="https://michalmicek.cz" target="_blank" class="inline-flex items-center gap-2 font-display font-bold v7-trap-btn v7-phi-sm text-[#0F3E2E] font-bold px-6 py-4 text-xs">
                             <span>Osobní web zakladatele</span>
                             <span>michalmicek.cz</span>
                             <span>↗</span>
                         </a>
-                        <a href="https://edu-partners.cz" target="_blank" class="inline-flex items-center gap-2 font-display font-bold v7-trap-btn text-[#0F3E2E] font-bold px-6 py-4 text-xs">
+                        <a href="https://edu-partners.cz" target="_blank" class="inline-flex items-center gap-2 font-display font-bold v7-trap-btn v7-phi-sm text-[#0F3E2E] font-bold px-6 py-4 text-xs">
                             <span>Školení a&nbsp;firemní realizace</span>
                             <span>edu-partners.cz</span>
                             <span>↗</span>
@@ -635,7 +644,7 @@
                     Tady je metodika popsaná. Na visible7.io ji použijete na svůj vlastní nápad: krok za krokem, s&nbsp;videi, výpočty a&nbsp;lidmi, kteří vám poradí.
                 </p>
                 <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
-                    <a href="https://visible7.io/?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=aplikace" class="v7-trap-btn inline-flex h-14 items-center justify-center pl-7 text-base font-bold text-[#0F3E2E]">
+                    <a href="https://visible7.io/?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=aplikace" class="v7-trap-btn v7-phi-lg inline-flex h-14 items-center justify-center pl-7 text-base font-bold text-[#0F3E2E]">
                         Otestovat nápad zdarma
                     </a>
                     <span class="text-sm text-white/60">Pro registraci stačí e-mail. Platební kartu nezadáváte.</span>
@@ -1187,7 +1196,7 @@
                 První bránu projdete v&nbsp;aplikaci VISIBLE7 zdarma. Zjistíte, jestli o&nbsp;nápad někdo stojí a&nbsp;jestli se ho vyplatí rozvíjet.
             </p>
             <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://visible7.io/?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=zaver" class="v7-trap-btn inline-flex h-14 w-full sm:w-auto items-center justify-center pl-7 text-base font-bold text-[#0F3E2E]">
+                <a href="https://visible7.io/?utm_source=visible7cz&amp;utm_medium=referral&amp;utm_campaign=zaver" class="v7-trap-btn v7-phi-lg inline-flex h-14 w-full sm:w-auto items-center justify-center pl-7 text-base font-bold text-[#0F3E2E]">
                     Otestovat nápad zdarma
                 </a>
             </div>
